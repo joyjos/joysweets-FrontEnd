@@ -99,7 +99,7 @@ body {
     -webkit-flex: 0 0 100%;
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
-    margin-top: -30px;
+    margin-top: -10px;
     margin-left: 15px;
     font-size: 1.375rem;
     font-weight: 700;
@@ -1448,7 +1448,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 }
 
 .post-inside-1 {
-    background-image: url("../img/post-1.jpg");
+    /*background-image: url("../img/post-1.jpg");*/
 }
 
 #layout-grid:checked~.rk-portfolio,
@@ -2092,7 +2092,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 }
 
 .rk-menu__item {
-    color: #202020;
+    color: #8BBDD6;
     display: inherit;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -2107,7 +2107,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 }
 
 .rk-menu__item.active {
-    color: #a0a0a0;
+    color: #3D1901;
 }
 
 .rk-menu__link {

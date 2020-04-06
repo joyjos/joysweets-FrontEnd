@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,15 @@ import { RecetaComponent } from './pages/receta/receta.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { HttpClientModule} from '@angular/common/http';
 
+//Cambiar idioma a castellano
+import { registerLocaleData } from '@angular/common';
+import localeES from '@angular/common/locales/es';
+registerLocaleData(localeES, 'es');
+
+//Formularios
+import { FormsModule} from '@angular/forms';
+import { FormComponent } from './admin/form/form.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,14 +30,18 @@ import { HttpClientModule} from '@angular/common/http';
     AboutComponent,
     BlogComponent,
     RecetaComponent,
-    ContactoComponent
+    ContactoComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'es' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
