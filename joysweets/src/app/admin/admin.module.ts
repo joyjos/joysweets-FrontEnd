@@ -12,6 +12,7 @@ import { RegisterComponent } from './login/register.component';
 
 //Módulos
 import { SharedModule } from './shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule
   ],
   exports: [
     DashboardComponent,

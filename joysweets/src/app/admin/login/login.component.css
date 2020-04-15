@@ -73,3 +73,28 @@ Login register and recover password Page
     position: absolute;
     height: 100%;
 }
+
+[type="checkbox"]+label {
+    padding-left: 26px;
+    height: 25px;
+    line-height: 21px;
+    font-weight: normal;
+}
+
+[type="checkbox"]+label {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    font-size: 1rem;
+    -webkit-user-select: none;
+    /* webkit (safari, chrome) browsers */
+    -moz-user-select: none;
+    /* mozilla browsers */
+    -khtml-user-select: none;
+    /* webkit (konqueror) browsers */
+    -ms-user-select: none;
+    /* IE10+ */
+}
