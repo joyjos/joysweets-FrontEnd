@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: 'admin', component: AdminComponent,
     children: [
-        {path: 'dashboard', component: DashboardComponent},          
+        {path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dashboard'}},          
         {path: '',  pathMatch: 'full', redirectTo: 'dashboard'}
     ]
   },
