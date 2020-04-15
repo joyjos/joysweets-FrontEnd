@@ -39,9 +39,8 @@ export class PostsService {
   }
 
   //Método para cargar los comentarios
-  public getComentarios(id:number){
+  public getComentarios(){
     return this.http.get(`http://localhost:8081/comentarios`);
-      // .pipe(filter(resp=>resp['id']==id));
   }
 
 }

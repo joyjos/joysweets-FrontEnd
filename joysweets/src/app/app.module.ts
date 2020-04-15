@@ -1,7 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 
+//Rutas
 import { AppRoutingModule } from './app-routing.module';
+
+//Módulos
+import { HttpClientModule} from '@angular/common/http';
+import { AdminModule } from './admin/admin.module';
+
+//Componentes
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -10,7 +17,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { RecetaComponent } from './pages/receta/receta.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
-import { HttpClientModule} from '@angular/common/http';
+import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 
 //Cambiar idioma a castellano
 import { registerLocaleData } from '@angular/common';
@@ -19,7 +26,7 @@ registerLocaleData(localeES, 'es');
 
 //Formularios
 import { FormsModule} from '@angular/forms';
-import { FormComponent } from './admin/form/form.component';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +38,15 @@ import { FormComponent } from './admin/form/form.component';
     BlogComponent,
     RecetaComponent,
     ContactoComponent,
-    FormComponent
+    NopagefoundComponent,
+    PagesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AdminModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'es' }

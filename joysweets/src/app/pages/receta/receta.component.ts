@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { PostsService } from '../../services/posts.service';
 import { Receta } from '../../interfaces/receta.interface';
 import { Comentario } from '../../interfaces/comentario.interface';
+import { take, first } from 'rxjs/operators';
+import { pipe } from 'rxjs';
 
 @Component({
   selector: 'app-receta',
@@ -25,20 +27,27 @@ export class RecetaComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params
-      .subscribe(parametros=>{
-        console.log(parametros['id']);
-        this.postsService.getReceta(parametros['id'])
+      .subscribe(params=>{
+        console.log(params['id']);
+        this.postsService.getReceta(params['id'])
           .subscribe((receta:Receta)=>{
             console.log(receta);
-            this.id=parametros['id'];
+            this.id=params['id'];
             this.receta=receta;
-            this.postsService.getComentarios(this.id)
+            this.postsService.getComentarios()
               .subscribe((resp:Comentario)=>{
                 console.log(resp);
                 this.comentarios=resp;
               });
           });
       });
+
+      // this.postsService.getComentarios(this.id)
+      //   .subscribe((comentario:Comentario)=>{
+      //     console.log(comentario);
+      //     this.comentarios=comentario;
+      //   });
+      
   }
 
 }
