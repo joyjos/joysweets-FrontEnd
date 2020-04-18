@@ -12,7 +12,8 @@ import { RegisterComponent } from './login/register.component';
 
 //Módulos
 import { SharedModule } from './shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     SharedModule,
     AdminRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [
     DashboardComponent,

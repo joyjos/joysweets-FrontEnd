@@ -21,10 +21,12 @@ $(function() {
         if (width < 1170) {
             $("body").addClass("mini-sidebar");
             $('.navbar-brand span').hide();
+            $('.navbar-brand b').removeClass("oculto");
             $(".sidebartoggler i").addClass("ti-menu");
         } else {
             $("body").removeClass("mini-sidebar");
             $('.navbar-brand span').show();
+
         }
 
         var height = ((window.innerHeight > 0) ? window.innerHeight : this.screen.height) - 1;
@@ -46,12 +48,12 @@ $(function() {
             $("body").trigger("resize");
             $("body").removeClass("mini-sidebar");
             $('.navbar-brand span').show();
-            
+
         } else {
             $("body").trigger("resize");
             $("body").addClass("mini-sidebar");
             $('.navbar-brand span').hide();
-            
+
         }
     });
 
@@ -100,17 +102,17 @@ $(function() {
     //tooltip
     // ============================================================== 
     $(function() {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-    // ============================================================== 
-    //Popover
-    // ============================================================== 
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        // ============================================================== 
+        //Popover
+        // ============================================================== 
     $(function() {
-        $('[data-toggle="popover"]').popover()
-    })
-    // ============================================================== 
-    // Sidebarmenu
-    // ============================================================== 
+            $('[data-toggle="popover"]').popover()
+        })
+        // ============================================================== 
+        // Sidebarmenu
+        // ============================================================== 
     $(function() {
         $('#sidebarnav').AdminMenu();
     });
@@ -119,7 +121,7 @@ $(function() {
     // Perfact scrollbar
     // ============================================================== 
     $('.scroll-sidebar, .right-side-panel, .message-center, .right-sidebar').perfectScrollbar();
-    
+
     // ============================================================== 
     // Resize all elements
     // ============================================================== 
@@ -131,7 +133,7 @@ $(function() {
         $(this).toggleClass("task-done");
     });
 
-    
+
 
     // ============================================================== 
     // Collapsable cards
