@@ -66,12 +66,14 @@ export class RegisterComponent implements OnInit {
     //console.log('Forma válida', this.forma.valid);
     //console.log(this.forma.value);
 
+    //Creo un objeto de tipo Usuario
     let usuario=new Usuario(
       this.forma.value.nombre,
       this.forma.value.email,
       this.forma.value.password
     );
 
+    //Llamo al servicio
     this.usuario.crearUsuario(usuario)
       .subscribe(resp=>{
         console.log(resp);

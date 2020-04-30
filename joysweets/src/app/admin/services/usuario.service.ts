@@ -18,13 +18,14 @@ export class UsuarioService {
    }
 
    //Método para el login
-   login(usuario:Usuario){
-    let url=URL_SERVICES+ "/usuario"
+   login(usuario:Usuario, recuerdame:boolean){
+    let url=URL_SERVICES+ "/auth/login";
+    return this.http.post(url, usuario);
    }
 
    //Método para crear usuarios
    crearUsuario(usuario:Usuario){
-    let url=URL_SERVICES + "/insertarUsuario";
+    let url=URL_SERVICES + "/usuarios/insertarUsuario";
     return this.http.post(url, usuario, {responseType: 'text'})
       .pipe(map((resp:any)=>{
         Swal.fire('Usuario creado', usuario.email, 'success');
