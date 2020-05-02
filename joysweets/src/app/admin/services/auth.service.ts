@@ -3,21 +3,54 @@ import { HttpClient } from '@angular/common/http';
 import { NuevoUsuario } from '../models/NuevoUsuario';
 import { LoginUsuario } from '../models/LoginUsuario';
 
+import { Router } from '@angular/router';
+
+//Configuración
 import { URL_SERVICES } from '../../config/config';
+import Swal from 'sweetalert2';
+
+import { map } from 'rxjs/operators';
+
+//Servicios
+import { TokenService } from './token.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private authURL = 'http://localhost:8081/auth/';
+  constructor(private http:HttpClient, public token:TokenService, public router:Router) {
+    //Cargo el token en el Local Storage siempre que entro
+    this.cargarStorage();
+   }
 
-  constructor(private http:HttpClient) { }
-
-  public nuevo(nuevoUsuario:NuevoUsuario){
-    return this.http.post(this.authURL + 'nuevo', nuevoUsuario);
+  //Método para saber si estoy logueado
+  estaLogueado(){
+    return (this.token.getToken().length>5) ? true: false;
   }
 
+  //Inicializo el valor del token al recargar la página (si existe token obtengo su valor, si no lo pongo vacío)
+  cargarStorage(){
+    if(this.token.getToken()){
+      this.token.getToken();
+    }else{
+      this.token.setToken('');
+    }
+  }
+
+  //Método para crear usuarios
+  public nuevo(nuevoUsuario:NuevoUsuario){
+
+    let url=URL_SERVICES + '/auth/nuevo';
+
+    return this.http.post(url, nuevoUsuario, {responseType: 'text'})
+      .pipe(map((resp:any)=>{
+        Swal.fire('Usuario creado', nuevoUsuario.username, 'success');
+        return resp.usuario;
+      }));
+  }
+
+  //Método para el login
   public login(loginUsuario:LoginUsuario, recuerdame:boolean=false){
 
     let url=URL_SERVICES + '/auth/login';
@@ -30,5 +63,15 @@ export class AuthService {
     }
     
     return this.http.post(url, loginUsuario);
+  }
+
+  //Método para el logout
+  public logout(){
+    //Elimino los datos en el Local Storage
+    localStorage.removeItem('AuthToken');
+    localStorage.removeItem('AuthUserName');
+    localStorage.removeItem('AuthAuthorities');
+
+    this.router.navigate(['/login']);
   }
 }

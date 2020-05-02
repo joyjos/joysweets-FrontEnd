@@ -15,9 +15,13 @@ import { LoginComponent } from './admin/login/login.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { RegisterComponent } from './admin/login/register.component';
 
+//Guard
+import { LoginGuard } from './admin/services/guards/login.guard';
+
 const routes: Routes = [
   {
     path: 'admin', component: AdminComponent,
+    canActivate: [LoginGuard],
     children: [
         {path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dashboard'}},          
         {path: '',  pathMatch: 'full', redirectTo: 'dashboard'}

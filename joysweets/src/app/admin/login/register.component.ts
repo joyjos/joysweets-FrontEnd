@@ -5,8 +5,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2'
 
 //Servicios
-import { UsuarioService } from '../services/usuario.service';
-import { Usuario } from '../models/usuarios.model';
+import { NuevoUsuario } from '../models/NuevoUsuario';
+import { AuthService } from '../services/auth.service';
 
 //Navegación
 import { Router } from '@angular/router';
@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
 
   forma:FormGroup;
 
-  constructor(public usuario:UsuarioService, public router:Router) { }
+  constructor(public auth:AuthService, public router:Router) { }
 
   sonIguales(campo1:string, campo2:string){
     return(group:FormGroup)=>{
@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
 
     this.forma=new FormGroup({
       nombre:new FormControl(null, Validators.required),
-      email:new FormControl(null, [Validators.required, Validators.email]),
+      username:new FormControl(null, [Validators.required, Validators.email]),
       password:new FormControl(null, Validators.required),
       password2:new FormControl(null, Validators.required),
       condiciones:new FormControl(false)
@@ -67,14 +67,14 @@ export class RegisterComponent implements OnInit {
     //console.log(this.forma.value);
 
     //Creo un objeto de tipo Usuario
-    let usuario=new Usuario(
+    let nuevoUsuario=new NuevoUsuario(
       this.forma.value.nombre,
-      this.forma.value.email,
+      this.forma.value.username,
       this.forma.value.password
     );
 
     //Llamo al servicio
-    this.usuario.crearUsuario(usuario)
+    this.auth.nuevo(nuevoUsuario)
       .subscribe(resp=>{
         console.log(resp);
         //Creado el usuario lo mando al login para que pueda loguearse
