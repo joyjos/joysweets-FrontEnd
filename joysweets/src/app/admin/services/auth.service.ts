@@ -26,7 +26,11 @@ export class AuthService {
 
   //Método para saber si estoy logueado
   estaLogueado(){
-    return (this.token.getToken().length>5) ? true: false;
+    if(this.token.getToken()===null){
+      return;
+    }else{
+      return (this.token.getToken().length>5) ? true: false;
+    }
   }
 
   //Inicializo el valor del token al recargar la página (si existe token obtengo su valor, si no lo pongo vacío)
