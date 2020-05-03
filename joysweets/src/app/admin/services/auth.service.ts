@@ -19,6 +19,8 @@ import { TokenService } from './token.service';
 })
 export class AuthService {
 
+  usuario:NuevoUsuario;
+
   constructor(private http:HttpClient, public token:TokenService, public router:Router) {
     //Cargo el token en el Local Storage siempre que entro
     this.cargarStorage();
@@ -59,7 +61,7 @@ export class AuthService {
 
     let url=URL_SERVICES + '/auth/login';
 
-    //Si marco recuérdame guardo en Local Storage el username
+    //Si marco recuérdame, guardo en Local Storage el username
     if(recuerdame){
       localStorage.setItem('username', loginUsuario.username);
     }else{

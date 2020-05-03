@@ -14,21 +14,24 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './admin/login/login.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { RegisterComponent } from './admin/login/register.component';
+import { UsuariosComponent } from './admin/usuarios/usuarios.component';
 
 //Guard
 import { LoginGuard } from './admin/services/guards/login.guard';
 
 const routes: Routes = [
-  {
-    path: 'admin', component: AdminComponent,
-    canActivate: [LoginGuard],
-    children: [
-        {path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dashboard'}},          
-        {path: '',  pathMatch: 'full', redirectTo: 'dashboard'}
-    ]
-  },
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  // {
+  //   path: 'admin', component: AdminComponent,
+  //   canActivate: [LoginGuard],
+  //   children: [
+  //       {path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dashboard'}},
+  //       //Mantenimientos
+  //       {path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Mantenimiento de Usuarios'}},      
+  //       {path: '',  pathMatch: 'full', redirectTo: 'dashboard'}
+  //   ]
+  // },
+  // {path: 'login', component: LoginComponent},
+  // {path: 'register', component: RegisterComponent},
   {
     path: '', component: PagesComponent,
   // {path: 'home', component: HomeComponent},

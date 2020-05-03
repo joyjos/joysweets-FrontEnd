@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         .subscribe((resp:any)=>{
           console.log(resp);
 
-          //Almaceno los valores en Session Storage
+          //Almaceno los valores en Local Storage
           this.token.setToken(resp.token);
           this.token.setUserName(resp.username);
           this.token.setAuthorities(resp.authorities);

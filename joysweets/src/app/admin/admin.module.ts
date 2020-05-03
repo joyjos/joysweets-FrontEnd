@@ -9,6 +9,7 @@ import { AdminComponent} from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 //Módulos
 import { SharedModule } from './shared/shared.module';
@@ -20,15 +21,16 @@ import { HttpClientModule } from '@angular/common/http';
     AdminComponent,
     DashboardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UsuariosComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    AdminRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminRoutingModule,
   ],
   exports: [
     DashboardComponent,
