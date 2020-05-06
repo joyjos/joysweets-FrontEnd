@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 //Sweetalert2
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 //Servicios
 import { NuevoUsuario } from '../models/NuevoUsuario';
@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
 
   forma:FormGroup;
 
-  constructor(public auth:AuthService, public router:Router) { }
+  constructor(public authService:AuthService, public router:Router) { }
 
   sonIguales(campo1:string, campo2:string){
     return(group:FormGroup)=>{
@@ -74,9 +74,9 @@ export class RegisterComponent implements OnInit {
     );
 
     //Llamo al servicio
-    this.auth.nuevo(nuevoUsuario)
+    this.authService.nuevo(nuevoUsuario)
       .subscribe(resp=>{
-        console.log(resp);
+        //console.log(resp);
         //Creado el usuario lo mando al login para que pueda loguearse
         this.router.navigate(['/login']);
       })

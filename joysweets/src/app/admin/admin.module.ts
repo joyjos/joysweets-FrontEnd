@@ -16,6 +16,9 @@ import { SharedModule } from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
+import { interceptorProvider } from './services/interceptor.service';
+
 @NgModule({
   declarations: [
     AdminComponent,
@@ -36,6 +39,9 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     LoginComponent,
     RegisterComponent
+  ],
+  providers: [
+    interceptorProvider
   ]
 })
 export class AdminModule { }

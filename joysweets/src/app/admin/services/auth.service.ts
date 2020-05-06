@@ -21,26 +21,26 @@ export class AuthService {
 
   usuario:NuevoUsuario;
 
-  constructor(private http:HttpClient, public token:TokenService, public router:Router) {
+  constructor(private http:HttpClient, public tokenService:TokenService, public router:Router) {
     //Cargo el token en el Local Storage siempre que entro
     this.cargarStorage();
    }
 
   //Método para saber si estoy logueado
   estaLogueado(){
-    if(this.token.getToken()===null){
+    if(this.tokenService.getToken()===null){
       return;
     }else{
-      return (this.token.getToken().length>5) ? true: false;
+      return (this.tokenService.getToken().length>5) ? true: false;
     }
   }
 
   //Inicializo el valor del token al recargar la página (si existe token obtengo su valor, si no lo pongo vacío)
   cargarStorage(){
-    if(this.token.getToken()){
-      this.token.getToken();
+    if(this.tokenService.getToken()){
+      this.tokenService.getToken();
     }else{
-      this.token.setToken('');
+      this.tokenService.setToken('');
     }
   }
 
@@ -51,7 +51,7 @@ export class AuthService {
 
     return this.http.post(url, nuevoUsuario, {responseType: 'text'})
       .pipe(map((resp:any)=>{
-        Swal.fire('Usuario creado', nuevoUsuario.username, 'success');
+        Swal.fire('Usuario creado', nuevoUsuario.nombre, 'success');
         return resp.usuario;
       }));
   }

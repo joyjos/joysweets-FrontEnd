@@ -9,11 +9,11 @@ import { AuthService } from '../auth.service';
 })
 export class LoginGuard implements CanActivate {
 
-constructor(public auth:AuthService, public router:Router){}
+constructor(public authService:AuthService, public router:Router){}
 
   canActivate() {
-    if(this.auth.estaLogueado()){
-      console.log('Pasó el Guard');
+    if(this.authService.estaLogueado()){
+      //console.log('Pasó el Guard');
       return true;
     }else{
       console.log('Bloqueado por el Guard');

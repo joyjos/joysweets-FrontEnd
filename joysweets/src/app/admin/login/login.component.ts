@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   username:string;
   recuerdame:boolean=false;
 
-  constructor(public router:Router, public auth:AuthService, public token:TokenService) { }
+  constructor(public router:Router, public authService:AuthService, public tokenService:TokenService) { }
 
   ngOnInit(): void {
     
@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
   }
 
   ingresar(forma:NgForm){
-    console.log(forma.valid);
-    console.log(forma.value);
+    //console.log(forma.valid);
+    //console.log(forma.value);
 
     if(forma.invalid){
       return;
@@ -47,14 +47,14 @@ export class LoginComponent implements OnInit {
       );
 
       //Llamo al servicio
-      this.auth.login(loginUsuario, forma.value.recuerdame)
+      this.authService.login(loginUsuario, forma.value.recuerdame)
         .subscribe((resp:any)=>{
-          console.log(resp);
+          //console.log(resp);
 
           //Almaceno los valores en Local Storage
-          this.token.setToken(resp.token);
-          this.token.setUserName(resp.username);
-          this.token.setAuthorities(resp.authorities);
+          this.tokenService.setToken(resp.token);
+          this.tokenService.setUserName(resp.username);
+          this.tokenService.setAuthorities(resp.authorities);
 
           //Si las credenciales son correctas redirecciono al dashboard
           this.router.navigate(['/admin/dashboard']);

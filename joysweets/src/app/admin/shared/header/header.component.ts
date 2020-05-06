@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 //Servicios
 import { AuthService } from '../../services/auth.service';
+import { TokenService } from '../../services/token.service';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +11,17 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public auth:AuthService) { }
+  //En el objeto info almaceno los valores del token, username y los privilegios
+  info: any = {};
+
+  constructor(public auth:AuthService, public tokenService:TokenService) { }
 
   ngOnInit(): void {
+    this.info = {
+      token: this.tokenService.getToken(),
+      username: this.tokenService.getUserName(),
+      authorities: this.tokenService.getAuthorities(),
+    };
   }
 
 }
