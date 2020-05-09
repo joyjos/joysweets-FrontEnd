@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     
-    //Le paso el valor al campo de l formulario
+    //Le paso el valor al campo del formulario
     this.username=localStorage.getItem('username') || '';
 
     //Si el campo username tiene algo, quiero que esté seleccionado el Recuérdame

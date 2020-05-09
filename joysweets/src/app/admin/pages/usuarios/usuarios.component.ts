@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NuevoUsuario } from '../models/NuevoUsuario';
-import { Usuario } from '../models/usuarios.model';
+import { NuevoUsuario } from '../../models/NuevoUsuario';
+import { Usuario } from '../../models/usuarios.model';
 
 //Servicios
-import { UsuarioService } from '../services/usuario.service';
+import { UsuarioService } from '../../services/usuario.service';
 
 //Sweetalert2
 import Swal from 'sweetalert2';
@@ -18,15 +18,15 @@ export class UsuariosComponent implements OnInit {
   //Creo el array usuarios
   usuarios:NuevoUsuario[]=[];
 
-  totalRegistros:number=0;
-
   constructor(public usuarioService:UsuarioService) { }
 
   ngOnInit(): void {
     this.cargarUsuarios();
   }
 
+  //==================================
   //Método para cargar los usuarios
+  //==================================
   cargarUsuarios(){
     this.usuarioService.cargarUsuarios()
       .subscribe((resp:any)=>{
@@ -35,14 +35,18 @@ export class UsuariosComponent implements OnInit {
       })
   }
 
+  //================================
   //Método para buscar un usuario
+  //================================
   buscarUsuario(termino:string){
     console.log(termino);
   }
 
+  //================================
   //Método para borrar un usuario
+  //================================
   borrarUsuario(usuario:Usuario){
-    console.log(usuario);
+    //console.log(usuario);
 
       Swal.fire({
         title: 'Estás seguro?',
@@ -52,7 +56,7 @@ export class UsuariosComponent implements OnInit {
         confirmButtonText: 'Sí, bórralo'
       }).then((borrar) => {
 
-        console.log(borrar);
+        //console.log(borrar);
 
         if (borrar.value) {
           this.usuarioService.borrarUsuario(usuario.idUsuario)
@@ -67,9 +71,6 @@ export class UsuariosComponent implements OnInit {
           )
         }
       });
-
-      
-    
   }
 
 }

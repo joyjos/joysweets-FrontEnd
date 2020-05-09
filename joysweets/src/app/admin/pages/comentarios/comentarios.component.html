@@ -1,0 +1,36 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Comentarios (<small>{{comentarios.length}}</small>)</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Comentario</th>
+                            <th>Fecha</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let comentario of comentarios">
+                            <td>{{comentario.comentario}}</td>
+                            <td>{{comentario.fechaComentario}}</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button class="btn btn-primary m-r-10">
+                                    <i class="fa fa-save"></i>
+                                </button>
+                                <button (click)="borrarComentario(comentario)" class="btn btn-danger">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

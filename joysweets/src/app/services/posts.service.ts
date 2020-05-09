@@ -19,7 +19,9 @@ export class PostsService {
     this.cargarPosts();
    }
 
+  //===============================
   //Método para cargar los posts
+  //===============================
   private cargarPosts(){
     return new Promise((resolve, reject)=>{
       this.http.get('http://localhost:8081/posts/posts')
@@ -33,12 +35,16 @@ export class PostsService {
     });
   }
 
+  //===============================
   //Método para cargar la receta
+  //===============================
   public getReceta(id:number){
     return this.http.get(`http://localhost:8081/posts/post/${id}`);
   }
 
+  //=====================================
   //Método para cargar los comentarios
+  //=====================================
   public getComentarios(){
     return this.http.get(`http://localhost:8081/comentarios/comentarios`);
   }

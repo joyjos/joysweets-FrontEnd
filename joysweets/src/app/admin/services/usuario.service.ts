@@ -25,13 +25,13 @@ export class UsuarioService {
   }
 
   //Método para cargar un usuario
-  cargarUsuario(id:string){
+  cargarUsuario(id:number){
     let url=URL_SERVICES + `/usuarios/usuario/${id}`;
   }
 
   //Método para borrar un usuario
-  borrarUsuario(id:string){
-    let url=URL_SERVICES + `/usuarios/eliminarUsuario/${id}`;
+  borrarUsuario(id:number){
+    let url=URL_SERVICES + '/usuarios/eliminarUsuario/'+ id;
     return this.http.delete(url, {responseType: 'text'});
   }
 

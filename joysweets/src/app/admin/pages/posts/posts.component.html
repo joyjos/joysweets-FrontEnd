@@ -1,0 +1,44 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="text-right">
+                    <button [routerLink]="['/post', 'nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                    <i class="fa fa-plus"></i> 
+                    Crear Receta
+                  </button>
+                </div>
+
+                <h3 class="card-title">Recetas (<small>{{posts.length}}</small>)</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Receta</th>
+                            <th>Imagen</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let post of posts">
+                            <td>{{post.nombre}}</td>
+                            <td>{{post.categoria}}</td>
+                            <td>{{post.post}}</td>
+                            <td><img src="{{post.imagen}}" class="img-50 pointer"></td>
+                            <td>
+                                <button [routerLink]="['/post', post.idPost]" class="btn btn-primary m-r-10">
+                                    <i class="fa fa-save"></i>
+                                </button>
+                                <button (click)="borrarPost(post)" class="btn btn-danger">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

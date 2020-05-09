@@ -20,7 +20,7 @@ export class SidebarService {
       icono: 'mdi mdi-folder-lock-open',
       submenu: [
         {titulo: 'Usuarios', url: '/admin/dashboard/usuarios'},
-        {titulo: 'Posts', url: '/admin/dashboard/posts'},
+        {titulo: 'Recetas', url: '/admin/dashboard/posts'},
         {titulo: 'Comentarios', url: '/admin/dashboard/comentarios'}
       ]
     }

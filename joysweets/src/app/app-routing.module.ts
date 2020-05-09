@@ -14,7 +14,6 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './admin/login/login.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { RegisterComponent } from './admin/login/register.component';
-import { UsuariosComponent } from './admin/usuarios/usuarios.component';
 
 //Guard
 import { LoginGuard } from './admin/services/guards/login.guard';

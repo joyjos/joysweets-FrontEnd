@@ -18,6 +18,7 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { RecetaComponent } from './pages/receta/receta.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { PagesComponent } from './pages/pages.component';
 
 //Cambiar idioma a castellano
 import { registerLocaleData } from '@angular/common';
@@ -26,7 +27,6 @@ registerLocaleData(localeES, 'es');
 
 //Formularios
 import { FormsModule} from '@angular/forms';
-import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
