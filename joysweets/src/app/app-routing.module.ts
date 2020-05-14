@@ -40,9 +40,10 @@ const routes: Routes = [
       {path: 'blog', component: BlogComponent},
       {path: 'receta/:id', component: RecetaComponent},
       {path: 'contacto', component: ContactoComponent},
-      {path: '**',  pathMatch: 'full', redirectTo: 'home'},
+      {path: '**', pathMatch: 'full', redirectTo: 'home'},
     ]
-  }
+  },
+  {path: '**', component:NopagefoundComponent},
 ];
 
 @NgModule({

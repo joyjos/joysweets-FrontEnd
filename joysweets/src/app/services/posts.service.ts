@@ -39,14 +39,14 @@ export class PostsService {
   //Método para cargar la receta
   //===============================
   public getReceta(id:number){
-    return this.http.get(`http://localhost:8081/posts/post/${id}`);
+    return this.http.get('http://localhost:8081/posts/post/'+ id);
   }
 
   //=====================================
   //Método para cargar los comentarios
   //=====================================
   public getComentarios(){
-    return this.http.get(`http://localhost:8081/comentarios/comentarios`);
+    return this.http.get('http://localhost:8081/comentarios/comentarios');
   }
 
 }

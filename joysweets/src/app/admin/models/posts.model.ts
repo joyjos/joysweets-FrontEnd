@@ -6,7 +6,7 @@ export class Post{
         public categoria:string,
         public post:string,
         public imagen:string,
-        public fechaPost:ɵLocaleDataIndex,
-        public idPost:number
+        public fechaPost?:ɵLocaleDataIndex,
+        public idPost?:number
     ){}
 }

@@ -43,3 +43,17 @@
 .pointer {
     cursor: pointer;
 }
+
+
+/* Tamaño de la imagen de la receta */
+
+.img-50 {
+    width: 50px;
+    height: 50px;
+}
+
+.joy {
+    padding: .5rem .75rem !important;
+    border: 1px solid rgba(0, 0, 0, .15) !important;
+    border-radius: .25rem;
+}

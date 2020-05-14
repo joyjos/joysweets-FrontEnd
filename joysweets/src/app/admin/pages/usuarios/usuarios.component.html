@@ -21,7 +21,6 @@
                             <th>Nombre</th>
                             <th>Email</th>
                             <th>Rol</th>
-                            <th>Auth</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -29,8 +28,7 @@
                         <tr *ngFor="let usuario of usuarios">
                             <td>{{usuario.nombre}}</td>
                             <td>{{usuario.username}}</td>
-                            <td></td>
-                            <td></td>
+                            <td>{{usuario.roles[0].roleName}}</td>
                             <td>
                                 <button class="btn btn-primary m-r-10">
                                     <i class="fa fa-save"></i>

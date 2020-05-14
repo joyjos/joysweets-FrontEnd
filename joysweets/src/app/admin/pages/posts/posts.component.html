@@ -4,7 +4,7 @@
             <div class="card-body">
 
                 <div class="text-right">
-                    <button [routerLink]="['/post', 'nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                    <button [routerLink]="['/admin/postNuevo']" type="button" class="btn waves-effect waves-light btn-primary">
                     <i class="fa fa-plus"></i> 
                     Crear Receta
                   </button>
@@ -26,9 +26,11 @@
                             <td>{{post.nombre}}</td>
                             <td>{{post.categoria}}</td>
                             <td>{{post.post}}</td>
-                            <td><img src="{{post.imagen}}" class="img-50 pointer"></td>
+                            <td id="image-popups">
+                                <a href="assets/img/{{post.imagen}}" data-effect="mfp-zoom-in"><img src="assets/img/{{post.imagen}}" class="img-responsive img-thumbnail img-50 pointer"></a>
+                            </td>
                             <td>
-                                <button [routerLink]="['/post', post.idPost]" class="btn btn-primary m-r-10">
+                                <button [routerLink]="['/admin/post', post.idPost]" class="btn btn-primary m-r-10">
                                     <i class="fa fa-save"></i>
                                 </button>
                                 <button (click)="borrarPost(post)" class="btn btn-danger">

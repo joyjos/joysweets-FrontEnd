@@ -16,11 +16,11 @@
                     <tbody>
                         <tr *ngFor="let comentario of comentarios">
                             <td>{{comentario.comentario}}</td>
-                            <td>{{comentario.fechaComentario}}</td>
+                            <td>{{comentario.fechaComentario | date: 'EEEE, d MMMM y' | titlecase}}</td>
                             <td></td>
                             <td></td>
                             <td>
-                                <button class="btn btn-primary m-r-10">
+                                <button [routerLink]="['/admin/comentario', comentario.idComentario]" class="btn btn-primary m-r-10">
                                     <i class="fa fa-save"></i>
                                 </button>
                                 <button (click)="borrarComentario(comentario)" class="btn btn-danger">

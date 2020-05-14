@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class PostsComponent implements OnInit {
 
-    //Creo el array posts
+    //Creo el array posts (inicializo vacío)
     posts:Post[]=[];
 
   constructor(public postService:PostService) { }
@@ -43,7 +43,7 @@ export class PostsComponent implements OnInit {
 
     Swal.fire({
       title: 'Estás seguro?',
-      text: 'Estás a punto de borrar a ' +post.nombre,
+      text: 'Estás a punto de borrar ' +post.nombre,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Sí, bórralo'

@@ -6,28 +6,27 @@
             <p class="text-muted m-b-30 font-13">Dulces Emociones</p>
             <div class="row">
                 <div class="col-sm-12 col-xs-12">
-                    <form ngNativeValidate [formGroup]="forma">
+                    <form ngNativeValidate [formGroup]="forma" (ngSubmit)="registrarPost()" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Nombre</label>
-                            <input formControlName="nombre" name="nombre" type="text" class="form-control joy" required>
+                            <input formControlName="nombre" name="nombre" type="text" class="form-control" placeholder="Nombre" required>
 
                         </div>
                         <div class="form-group">
                             <label>Categoría</label>
-                            <input formControlName="categoria" name="categoria" type="text" class="form-control joy" required>
+                            <input formControlName="categoria" name="categoria" type="text" class="form-control" placeholder="Categoría" required>
                         </div>
                         <div class="form-group">
                             <label>Receta</label>
                             <textarea formControlName="post" name="post" class="form-control" rows="5" required></textarea>
                         </div>
-                        <div class="form-group">
-                            <label>Imagen</label>
-                            <input formControlName="imagen" name="imagen" type="file" id="file" class="custom-file-input joy">
-                        </div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFileLang" lang="es">
-                            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
-                        </div>
+                        <fieldset class="form-group">
+                            <label>Default file upload</label>
+                            <label class="custom-file d-block">
+                                <input formControlName="imagen" name="imagen" type="file" id="file" class="custom-file-input">
+                                <span class="custom-file-control"></span>
+                            </label>
+                        </fieldset>
                         <button type="submit" class="btn btn-success waves-effect waves-light m-r-10"><i class="fa fa-save"></i> Guardar</button>
                         <a routerLink="/admin/posts" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
                     </form>

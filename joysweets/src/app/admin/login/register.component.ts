@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(public authService:AuthService, public router:Router) { }
 
+  //Método para comprobar si dos campos son iguales
   sonIguales(campo1:string, campo2:string){
     return(group:FormGroup)=>{
       let pass1=group.controls[campo1].value;
@@ -39,6 +40,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
 
+    //Validaciones
     this.forma=new FormGroup({
       nombre:new FormControl(null, Validators.required),
       username:new FormControl(null, [Validators.required, Validators.email]),
@@ -48,8 +50,12 @@ export class RegisterComponent implements OnInit {
     }, {validators: this.sonIguales('password', 'password2')});
   }
 
+  //===================================
+  //Método para registrar un usuario
+  //===================================
   registrarUsuario(){
     
+    //Compruebo que el formulario es válido
     if(this.forma.invalid){
       return;
     }
@@ -79,7 +85,7 @@ export class RegisterComponent implements OnInit {
         //console.log(resp);
         //Creado el usuario lo mando al login para que pueda loguearse
         this.router.navigate(['/login']);
-      })
+      });
   }
 
 }

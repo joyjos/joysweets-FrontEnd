@@ -46,7 +46,11 @@ export class UsuariosComponent implements OnInit {
   //Método para borrar un usuario
   //================================
   borrarUsuario(usuario:Usuario){
-    //console.log(usuario);
+
+    // if(usuario.idUsuario===this.usuarioService.usuario.idUsuario){
+    //   Swal.fire('No puede borrar usuario', 'No puede borrarse a sí mismo', 'error');
+    //   return;
+    // }
 
       Swal.fire({
         title: 'Estás seguro?',
@@ -61,7 +65,7 @@ export class UsuariosComponent implements OnInit {
         if (borrar.value) {
           this.usuarioService.borrarUsuario(usuario.idUsuario)
             .subscribe(resp=>{
-              //console.log(resp);
+              console.log(resp);
                this.cargarUsuarios();
             });
           Swal.fire(

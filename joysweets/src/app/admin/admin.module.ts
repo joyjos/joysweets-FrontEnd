@@ -13,6 +13,8 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { ComentariosComponent } from './pages/comentarios/comentarios.component';
 import { PostComponent } from './pages/posts/post.component';
+import { PostNuevoComponent } from './pages/posts/post-nuevo.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 //Módulos
 import { SharedModule } from './shared/shared.module';
@@ -21,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 //Interceptor
 import { interceptorProvider } from './services/interceptor.service';
+import { ComentarioComponent } from './pages/comentarios/comentario.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { interceptorProvider } from './services/interceptor.service';
     UsuariosComponent,
     PostsComponent,
     ComentariosComponent,
-    PostComponent
+    PostComponent,
+    PostNuevoComponent,
+    PerfilComponent,
+    ComentarioComponent
   ],
   imports: [
     CommonModule,

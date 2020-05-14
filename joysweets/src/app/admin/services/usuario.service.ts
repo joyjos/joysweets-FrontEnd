@@ -18,18 +18,25 @@ export class UsuarioService {
     
    }
 
+   //==================================
    //Método para cargar los usuarios
+   //==================================
    cargarUsuarios(){
-    let url=URL_SERVICES + "/usuarios/usuarios";
+    let url=URL_SERVICES + '/usuarios/usuarios';
     return this.http.get(url);
   }
 
+  //================================
   //Método para cargar un usuario
+  //================================
   cargarUsuario(id:number){
-    let url=URL_SERVICES + `/usuarios/usuario/${id}`;
+    let url=URL_SERVICES + '/usuarios/usuario/'+ id;
+    return this.http.get(url, {responseType: 'text'});
   }
 
+  //=============================
   //Método para borrar un usuario
+  //=============================
   borrarUsuario(id:number){
     let url=URL_SERVICES + '/usuarios/eliminarUsuario/'+ id;
     return this.http.delete(url, {responseType: 'text'});

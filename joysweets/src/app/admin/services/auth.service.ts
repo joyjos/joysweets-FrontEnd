@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 
 //Configuración
 import { URL_SERVICES } from '../../config/config';
+
+//Sweetalert2
 import Swal from 'sweetalert2';
 
 import { map } from 'rxjs/operators';
@@ -73,11 +75,14 @@ export class AuthService {
 
   //Método para el logout
   public logout(){
+
     //Elimino los datos en el Local Storage
     localStorage.removeItem('AuthToken');
     localStorage.removeItem('AuthUserName');
     localStorage.removeItem('AuthAuthorities');
+    localStorage.removeItem('username');
 
+    //Redirecciono al login
     this.router.navigate(['/login']);
   }
 }
