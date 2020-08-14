@@ -57,7 +57,8 @@ export class UsuariosComponent implements OnInit {
         text: 'Estás a punto de borrar a ' +usuario.nombre,
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Sí, bórralo'
+        confirmButtonText: 'Sí, bórralo',
+        cancelButtonText: 'No, cancela!'
       }).then((borrar) => {
 
         //console.log(borrar);

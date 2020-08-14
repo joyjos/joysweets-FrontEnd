@@ -46,7 +46,8 @@ export class PostsComponent implements OnInit {
       text: 'Estás a punto de borrar ' +post.nombre,
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Sí, bórralo'
+      confirmButtonText: 'Sí, bórralo',
+      cancelButtonText: 'No, cancela!'
     }).then((borrar) => {
 
       //console.log(borrar);

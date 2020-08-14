@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Comentario } from '../models/comentarios.model';
+
+import { map } from 'rxjs/operators';
 
 //Configuración
 import { URL_SERVICES } from '../../config/config';
+
+//Sweetalerts2
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +39,17 @@ export class ComentarioService {
   borrarComentario(id:number){
     let url=URL_SERVICES + '/comentarios/eliminarComentario/'+ id;
     return this.http.delete(url, {responseType: 'text'});
+  }
+
+  //=======================================
+  //Método para actualizar un comentario
+  //=======================================
+  actualizarComentario(comentario:Comentario){
+    let url=URL_SERVICES + '/comentarios/modificarComentario/' + comentario.idComentario;
+    return this.http.put(url, comentario, {responseType: 'text'})
+      .pipe(map((resp:any)=>{
+        Swal.fire('Comentario actualizado', 'Comentario actualizado con éxito', 'success');
+        return resp.comentario;
+      }));
   }
 }

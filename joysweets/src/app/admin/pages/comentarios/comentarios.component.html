@@ -20,10 +20,10 @@
                             <td></td>
                             <td></td>
                             <td>
-                                <button [routerLink]="['/admin/comentario', comentario.idComentario]" class="btn btn-primary m-r-10">
-                                    <i class="fa fa-save"></i>
+                                <button [routerLink]="['/admin/comentario', comentario.idComentario]" class="btn btn-primary m-r-10" title="Modificar este comentario">
+                                    <i class="fa fa-pencil"></i>
                                 </button>
-                                <button (click)="borrarComentario(comentario)" class="btn btn-danger">
+                                <button (click)="borrarComentario(comentario)" class="btn btn-danger" title="Borrar este comentario">
                                     <i class="fa fa-trash-o"></i>
                                 </button>
                             </td>

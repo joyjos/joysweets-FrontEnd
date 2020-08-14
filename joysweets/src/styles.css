@@ -1,3 +1,5 @@
+/* Animación */
+
 .animated {
     -webkit-animation-duration: 0.6s;
     animation-duration: 0.6s;
@@ -40,6 +42,9 @@
     animation-name: fadeIn;
 }
 
+
+/* Cursor */
+
 .pointer {
     cursor: pointer;
 }
@@ -52,8 +57,33 @@
     height: 50px;
 }
 
+
+/* Input */
+
 .joy {
     padding: .5rem .75rem !important;
     border: 1px solid rgba(0, 0, 0, .15) !important;
     border-radius: .25rem;
+}
+
+
+/* Enlaces */
+
+.rk-menu__link {
+    color: #A3CBDE;
+}
+
+.rk-menu__link:hover {
+    color: #197AAA
+}
+
+.rk-menu__link:focus {
+    color: #197AAA;
+}
+
+
+/* Footer */
+
+.rk-footer__text {
+    color: #197AAA
 }

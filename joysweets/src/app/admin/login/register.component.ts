@@ -85,6 +85,10 @@ export class RegisterComponent implements OnInit {
         //console.log(resp);
         //Creado el usuario lo mando al login para que pueda loguearse
         this.router.navigate(['/login']);
+      },
+      error=>{
+        console.log(error.status);
+        Swal.fire('Error', error.error.mensaje, 'error');
       });
   }
 

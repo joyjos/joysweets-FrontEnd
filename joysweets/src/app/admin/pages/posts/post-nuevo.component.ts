@@ -56,7 +56,7 @@ export class PostNuevoComponent implements OnInit {
       .subscribe(resp=>{
         //console.log(resp);
         //Creado el post, regreso a la página de posts
-        this.router.navigate(['/admin/dashboard/posts']);
+        this.router.navigate(['/admin/posts']);
       });
   }
 

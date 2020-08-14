@@ -30,10 +30,10 @@
                             <td>{{usuario.username}}</td>
                             <td>{{usuario.roles[0].roleName}}</td>
                             <td>
-                                <button class="btn btn-primary m-r-10">
-                                    <i class="fa fa-save"></i>
+                                <button class="btn btn-primary m-r-10" title="Modificar este usuario">
+                                    <i class="fa fa-pencil"></i>
                                 </button>
-                                <button (click)="borrarUsuario(usuario)" class="btn btn-danger">
+                                <button (click)="borrarUsuario(usuario)" class="btn btn-danger" title="Eliminar este usuario">
                                     <i class="fa fa-trash-o"></i>
                                 </button>
                             </td>

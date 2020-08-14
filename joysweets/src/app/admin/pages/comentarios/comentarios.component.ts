@@ -40,22 +40,23 @@ export class ComentariosComponent implements OnInit {
   //===================================
   borrarComentario(comentario:Comentario){
 
-    console.log(comentario);
+    //console.log(comentario);
 
     Swal.fire({
       title: 'Estás seguro?',
       text: 'Estás a punto de borrar a ' +comentario.comentario,
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Sí, bórralo'
+      confirmButtonText: 'Sí, bórralo',
+      cancelButtonText: 'No, cancela!'
     }).then((borrar) => {
 
-      console.log(borrar);
+      //console.log(borrar);
 
       if (borrar.value) {
         this.comentarioService.borrarComentario(comentario.idComentario)
           .subscribe(resp=>{
-            console.log(resp);
+            //console.log(resp);
              this.cargarComentarios();
           });
         Swal.fire(
