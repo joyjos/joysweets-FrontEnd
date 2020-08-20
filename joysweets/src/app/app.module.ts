@@ -28,6 +28,9 @@ registerLocaleData(localeES, 'es');
 //Formularios
 import { FormsModule} from '@angular/forms';
 
+//Pipes
+import { SortPipe } from './pipes/sort.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +43,7 @@ import { FormsModule} from '@angular/forms';
     ContactoComponent,
     NopagefoundComponent,
     PagesComponent,
+    SortPipe,
   ],
   imports: [
     BrowserModule,
