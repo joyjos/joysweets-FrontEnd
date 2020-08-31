@@ -1570,10 +1570,6 @@ only screen and (min-device-pixel-ratio: 1.5) {
     text-align: left;
 }
 
-.blog-info__excerpt:not(:empty):after {
-    content: " […]";
-}
-
 .blog-meta {
     -webkit-box-align: baseline;
     -webkit-align-items: baseline;

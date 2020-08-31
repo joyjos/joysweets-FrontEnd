@@ -42,7 +42,7 @@
                 </div>
                 <div class="blog-info">
                     <h2 class="blog-info__title"> <a routerLink="/receta/{{post.idPost}}">{{post.nombre}}</a></h2>
-                    <p class="blog-info__excerpt">{{post.post | slice:0:170}}</p>
+                    <p [innerHTML]="post.post | truncate:170:true" class="blog-info__excerpt"></p>
                 </div>
                 <div class="blog-meta"><a routerLink="/receta/{{post.idPost}}" class="ae-u-bolder blog-meta__comments">3 Comentarios</a><span class="ae-kappa ae-u-bold blog-meta__date">{{post.fechaPost | date:'dd MMMM y' | uppercase}}</span><a routerLink="/receta/{{post.idPost}}"
                         class="arrow-button blog-meta__read-more">Continuar Leyendo<span class="arrow-cont">

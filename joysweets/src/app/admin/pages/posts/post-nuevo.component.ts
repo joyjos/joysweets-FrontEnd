@@ -3,6 +3,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Post } from '../../models/posts.model';
 import { Router } from '@angular/router';
 
+//CKEditor 5
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 //Servicios
 import { PostService } from '../../services/post.service';
 
@@ -12,6 +15,9 @@ import { PostService } from '../../services/post.service';
   styles: []
 })
 export class PostNuevoComponent implements OnInit {
+
+  //Creo el editor
+  public Editor=ClassicEditor;
 
   forma:FormGroup;
 

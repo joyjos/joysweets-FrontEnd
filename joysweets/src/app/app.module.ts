@@ -30,6 +30,7 @@ import { FormsModule} from '@angular/forms';
 
 //Pipes
 import { SortPipe } from './pipes/sort.pipe';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { SortPipe } from './pipes/sort.pipe';
     NopagefoundComponent,
     PagesComponent,
     SortPipe,
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,

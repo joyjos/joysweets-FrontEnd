@@ -20,6 +20,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 //Interceptor
 import { interceptorProvider } from './services/interceptor.service';
@@ -45,6 +46,7 @@ import { ComentarioComponent } from './pages/comentarios/comentario.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CKEditorModule,
     AdminRoutingModule,
   ],
   exports: [

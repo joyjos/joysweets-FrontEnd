@@ -18,7 +18,7 @@
                         </div>
                         <div class="form-group">
                             <label>Receta</label>
-                            <textarea formControlName="post" name="post" class="form-control" rows="5" required></textarea>
+                            <ckeditor [editor]="Editor" formControlName="post" name="post" required></ckeditor>
                         </div>
                         <fieldset class="form-group">
                             <label>Default file upload</label>
