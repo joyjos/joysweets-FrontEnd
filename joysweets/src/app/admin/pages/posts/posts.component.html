@@ -2,6 +2,16 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
+                <input [(ngModel)]="filterpost" name="filterpost" type="text" class="form-control joy" placeholder="&#xf002; Buscar..." style="font-family:'Montserrat', FontAwesome">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
 
                 <div class="text-right">
                     <button [routerLink]="['/admin/postNuevo']" type="button" class="btn waves-effect waves-light btn-primary">
@@ -22,7 +32,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let post of posts">
+                        <tr *ngFor="let post of posts | filterPost:filterpost">
                             <td>{{post.nombre}}</td>
                             <td>{{post.categoria}}</td>
                             <td [innerHTML]="post.post"></td>

@@ -25,6 +25,9 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 //Interceptor
 import { interceptorProvider } from './services/interceptor.service';
 import { ComentarioComponent } from './pages/comentarios/comentario.component';
+import { FilterUserPipe } from './pipes/filter-user.pipe';
+import { FilterPostPipe } from './pipes/filter-post.pipe';
+import { FilterCommentPipe } from './pipes/filter-comment.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { ComentarioComponent } from './pages/comentarios/comentario.component';
     PostComponent,
     PostNuevoComponent,
     PerfilComponent,
-    ComentarioComponent
+    ComentarioComponent,
+    FilterUserPipe,
+    FilterPostPipe,
+    FilterCommentPipe
   ],
   imports: [
     CommonModule,

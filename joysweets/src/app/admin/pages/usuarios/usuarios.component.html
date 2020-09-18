@@ -2,9 +2,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-
-                <input #input (keyup)="buscarUsuario(input.value)" type="text" class="form-control" placeholder="Buscar usuario...">
-
+                <input [(ngModel)]="filteruser" name="filteruser" type="text" class="form-control joy" placeholder="&#xf002; Buscar..." style="font-family:'Montserrat', FontAwesome">
             </div>
         </div>
     </div>
@@ -25,7 +23,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let usuario of usuarios">
+                        <tr *ngFor="let usuario of usuarios | filterUser:filteruser">
                             <td>{{usuario.nombre}}</td>
                             <td>{{usuario.username}}</td>
                             <td>{{usuario.roles[0].roleName}}</td>

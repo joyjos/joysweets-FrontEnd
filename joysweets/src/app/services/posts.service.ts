@@ -49,4 +49,15 @@ export class PostsService {
     return this.http.get('http://localhost:8081/comentarios/comentarios');
   }
 
+  //=====================================
+  //Método para filtrar los comentarios
+  //=====================================
+  public getComentariosidPost(){
+    let comentarios=this.getComentarios();
+    let comentario=comentarios.pipe(filter((item:Comentario)=>item.comentario==='Espectacular'));
+    return comentario;
+  }
+
+  
+
 }

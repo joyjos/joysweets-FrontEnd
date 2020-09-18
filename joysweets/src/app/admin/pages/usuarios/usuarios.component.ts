@@ -18,6 +18,9 @@ export class UsuariosComponent implements OnInit {
   //Creo el array usuarios
   usuarios:NuevoUsuario[]=[];
 
+  //Creo el filtro vacío
+  filteruser='';
+
   constructor(public usuarioService:UsuarioService) { }
 
   ngOnInit(): void {

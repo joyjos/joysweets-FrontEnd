@@ -17,6 +17,9 @@ export class PostsComponent implements OnInit {
     //Creo el array posts (inicializo vacío)
     posts:Post[]=[];
 
+    //Creo el filtro vacío
+    filterpost='';
+
   constructor(public postService:PostService) { }
 
   ngOnInit(): void {

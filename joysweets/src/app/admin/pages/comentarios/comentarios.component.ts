@@ -18,6 +18,9 @@ export class ComentariosComponent implements OnInit {
   //Creo el array comentarios
   comentarios:Comentario[]=[];
 
+  //Creo el filtro vacío
+  filtercomment='';
+
   constructor(public comentarioService:ComentarioService) { }
 
   ngOnInit(): void {

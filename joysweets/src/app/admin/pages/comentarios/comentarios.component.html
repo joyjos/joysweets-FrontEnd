@@ -2,6 +2,16 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
+                <input [(ngModel)]="filtercomment" name="filtercomment" type="text" class="form-control joy" placeholder="&#xf002; Buscar..." style="font-family:'Montserrat', FontAwesome">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
                 <h3 class="card-title">Comentarios (<small>{{comentarios.length}}</small>)</h3>
                 <table class="table table-hover">
                     <thead>
@@ -14,7 +24,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let comentario of comentarios">
+                        <tr *ngFor="let comentario of comentarios | filterComment:filtercomment">
                             <td>{{comentario.comentario}}</td>
                             <td>{{comentario.fechaComentario | date: 'EEEE, d MMMM y' | titlecase}}</td>
                             <td></td>
