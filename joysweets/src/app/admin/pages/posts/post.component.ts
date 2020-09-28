@@ -52,7 +52,7 @@ export class PostComponent implements OnInit {
   cargarPost(id:number){
     this.postService.cargarPost(id)
       .subscribe((resp:any)=>{
-        console.log(resp);
+        //console.log(resp);
         this.post=resp;
 
         //Establezco los valores de los campos

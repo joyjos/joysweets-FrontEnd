@@ -68,7 +68,9 @@ export class ComentarioComponent implements OnInit {
       this.forma.value.fechaComentario,
       this.forma.value.idComentario
     );
-      //console.log(nuevoComentario);
+
+    //console.log(nuevoComentario);
+    
     this.comentarioService.actualizarComentario(nuevoComentario)
       .subscribe((resp:any)=>{
         //console.log(resp);
@@ -76,7 +78,7 @@ export class ComentarioComponent implements OnInit {
         this.router.navigate(['/admin/comentarios']);
       }, error=>{
         console.log(error.status);
-        Swal.fire('Login Error', error.error.mensaje, 'error');
+        Swal.fire('Error al actualizar', error.error.mensaje, 'error');
       });
   }
 

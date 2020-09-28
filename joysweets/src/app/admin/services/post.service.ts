@@ -62,7 +62,7 @@ export class PostService {
       .pipe(map((resp:any)=>{
         Swal.fire('Receta actualizada', post.nombre, 'success');
         return resp.post;
-      }))
+      }));
   }
 
 }

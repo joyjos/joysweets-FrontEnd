@@ -13,6 +13,7 @@ import { ComentarioComponent } from './pages/comentarios/comentario.component';
 import { PostComponent } from './pages/posts/post.component';
 import { PostNuevoComponent } from './pages/posts/post-nuevo.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { UsuarioComponent } from './pages/usuarios/usuario.component';
 
 //Guard
 import { LoginGuard } from './services/guards/login.guard';
@@ -22,7 +23,7 @@ const adminRoutes:Routes=[
          path: 'admin', component: AdminComponent,
          canActivate: [LoginGuard],
          children: [
-            {path: 'perfil', component: PerfilComponent, data: {titulo: 'Perfil del usuario'}},
+            {path: 'perfil', component: PerfilComponent, data: {titulo: 'Perfil de usuario'}},
             {path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dashboard'}},
                 
             //Mantenimientos
@@ -31,6 +32,7 @@ const adminRoutes:Routes=[
             {path: 'comentarios', component: ComentariosComponent, data: {titulo: 'Comentarios'}},
             {path: 'comentario/:id', component: ComentarioComponent, data: {titulo: 'Actualizar Comentario'}},
             {path: 'post/:id', component: PostComponent, data: {titulo: 'Actualizar Receta'}},
+            {path: 'usuario/:id', component: UsuarioComponent, data: {titulo: 'Actualizar Usuario'}},
             {path: 'postNuevo', component: PostNuevoComponent, data: {titulo: 'Nueva Receta'}}   
         ],       
      },

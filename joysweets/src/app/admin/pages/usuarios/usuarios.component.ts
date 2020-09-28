@@ -33,7 +33,7 @@ export class UsuariosComponent implements OnInit {
   cargarUsuarios(){
     this.usuarioService.cargarUsuarios()
       .subscribe((resp:any)=>{
-        //console.log(resp);
+        console.log(resp);
         this.usuarios=resp;
       })
   }

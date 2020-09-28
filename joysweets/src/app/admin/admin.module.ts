@@ -28,6 +28,8 @@ import { ComentarioComponent } from './pages/comentarios/comentario.component';
 import { FilterUserPipe } from './pipes/filter-user.pipe';
 import { FilterPostPipe } from './pipes/filter-post.pipe';
 import { FilterCommentPipe } from './pipes/filter-comment.pipe';
+import { UsuarioComponent } from './pages/usuarios/usuario.component';
+import { RolPipe } from './pipes/rol.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { FilterCommentPipe } from './pipes/filter-comment.pipe';
     ComentarioComponent,
     FilterUserPipe,
     FilterPostPipe,
-    FilterCommentPipe
+    FilterCommentPipe,
+    UsuarioComponent,
+    RolPipe
   ],
   imports: [
     CommonModule,

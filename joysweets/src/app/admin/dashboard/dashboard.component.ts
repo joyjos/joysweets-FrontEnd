@@ -10,9 +10,21 @@ import { TokenService } from '../services/token.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public token:TokenService) { }
+  //En el objeto info almaceno los valores del token, username y los privilegios
+  info: any = {};
+
+  constructor(public tokenService:TokenService) {
+
+   }
 
   ngOnInit(): void {
+    this.info = {
+      token: this.tokenService.getToken(),
+      username: this.tokenService.getUserName(),
+      authorities: this.tokenService.getAuthorities(),
+      
+    };
+    
   }
 
 }

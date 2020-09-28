@@ -16,12 +16,16 @@ export class HeaderComponent implements OnInit {
   //En el objeto info almaceno los valores del token, username y los privilegios
   info: any = {};
 
-  usuario:Usuario;
+  //Creo un usuario de tipo Usuario vacío
+  usuario:Usuario[]=[];
 
-  constructor(public auth:AuthService, public tokenService:TokenService, public usuarioService:UsuarioService) {
+  constructor(public authService:AuthService, public tokenService:TokenService, public usuarioService:UsuarioService) {
 
-      //Cargo el usuario
-      this.cargarUsuario(1);
+    //Cargo el username
+    let username=this.tokenService.getUserName();
+    
+    //Cargo el usuario por username
+    this.cargarUsuarioU(username);
     
    }
 
@@ -33,13 +37,13 @@ export class HeaderComponent implements OnInit {
     };
   }
 
-  //================================
-  //Método para cargar un usuario
-  //================================
-  cargarUsuario(id:number){
-    this.usuarioService.cargarUsuario(id)
+  //=============================================
+  //Método para cargar un usuario por username
+  //=============================================
+  cargarUsuarioU(username:string){
+    this.usuarioService.cargarUsuarioU(username)
       .subscribe((resp:any)=>{
-        console.log(resp);
+        //console.log(resp);
 
         this.usuario=resp;
       });

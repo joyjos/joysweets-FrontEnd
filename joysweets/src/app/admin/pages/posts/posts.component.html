@@ -36,15 +36,15 @@
                             <td>{{post.nombre}}</td>
                             <td>{{post.categoria}}</td>
                             <td [innerHTML]="post.post"></td>
-                            <td id=" image-popups ">
-                                <a href="assets/img/{{post.imagen}} " data-effect="mfp-zoom-in "><img src="assets/img/{{post.imagen}} " class="img-responsive img-thumbnail img-50 pointer "></a>
+                            <td id="image-popups">
+                                <a href="assets/img/{{post.imagen}}" data-effect="mfp-zoom-in"><img src="assets/img/{{post.imagen}}" class="img-responsive img-thumbnail img-50 pointer"></a>
                             </td>
                             <td>
-                                <button [routerLink]="[ '/admin/post', post.idPost] " class="btn btn-primary m-r-10 " title="Modificar esta receta ">
-                                    <i class="fa fa-pencil "></i>
+                                <button [routerLink]="[ '/admin/post', post.idPost]" class="btn btn-primary m-r-10" title="Modificar esta receta">
+                                    <i class="fa fa-pencil"></i>
                                 </button>
-                                <button (click)="borrarPost(post) " class="btn btn-danger " title="Eliminar esta receta ">
-                                    <i class="fa fa-trash-o "></i>
+                                <button (click)="borrarPost(post)" class="btn btn-danger" title="Eliminar esta receta">
+                                    <i class="fa fa-trash-o"></i>
                                 </button>
                             </td>
                         </tr>
