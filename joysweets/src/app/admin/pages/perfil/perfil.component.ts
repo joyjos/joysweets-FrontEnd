@@ -33,7 +33,8 @@ export class PerfilComponent implements OnInit {
     //Validaciones
     this.forma=new FormGroup({
       nombre:new FormControl(null),
-      username:new FormControl(null)
+      username:new FormControl(null),
+      password:new FormControl(null),
     });
   }
 
@@ -43,13 +44,14 @@ export class PerfilComponent implements OnInit {
   cargarUsuarioU(username:string){
     this.usuarioService.cargarUsuarioU(username)
       .subscribe((resp:any)=>{
-        //console.log(resp);
+        console.log(resp);
 
         this.usuario=resp;
 
         //Establezco los valores de los campos
         this.forma.controls['nombre'].setValue(resp.nombre);
         this.forma.controls['username'].setValue(resp.username);
+        this.forma.controls['password'].setValue(resp.password);
       });
   }
 

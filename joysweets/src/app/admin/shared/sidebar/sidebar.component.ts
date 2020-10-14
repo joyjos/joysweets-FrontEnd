@@ -20,7 +20,7 @@ export class SidebarComponent implements OnInit {
   info: any = {};
 
   //Creo un usuario de tipo Usuario vacío
-  usuario:Usuario[]=[];
+  usuario:Usuario;
 
   constructor(public sidebarService:SidebarService, public usuarioService:UsuarioService, public authService:AuthService, public tokenService:TokenService) {
 

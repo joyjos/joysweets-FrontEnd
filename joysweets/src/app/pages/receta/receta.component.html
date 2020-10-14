@@ -3,7 +3,7 @@
         <div class="item-inside__meta">
             <h1 class="fondoNombre fondo ae-u-bolder rk-portfolio-title">{{receta.nombre}}</h1>
             <p class="ae-theta rk-portfolio-category"><span class="fondoCategoria fondo ae-u-bolder">{{receta.categoria}}</span></p>
-            <p class="ae-kappa ae-u-bold rk-portfolio-inner-date">{{receta.fechaPost | date:'dd MMMM y' | uppercase}}</p>
+            <p class="ae-kappa ae-u-bold rk-portfolio-inner-date">{{receta.fechaPost | date:'dd MMMM y'}}</p>
         </div>
     </header>
     <div class="ae-container-fluid ae-container-fluid--inner rk-portfolio--inner">
@@ -52,11 +52,11 @@
 <ul *ngIf="comentarios" class="ae-container-fluid ae-container-fluid--inner rk-comments">
     <h3 class="rk-comments__title ae-u-bolder">{{comentarios.length}} Comentarios</h3>
     <li>
-        <article *ngFor="let comentario of comentarios" class="rk-comment">
+        <article *ngFor="let comentario of comentarios | sort" class="rk-comment">
             <aside class="rk-comment__avatar"><img src="assets/img/user-2.jpg" alt="" class="rk-comment__avatar au-circle"></aside>
             <div class="rk-comment__content">
                 <header class="rk-comment__header">
-                    <h5 class="rk-comment__author ae-u-bolder"><a href="#0">Jose</a></h5>
+                    <h5 class="rk-comment__author ae-u-bolder"><a href="#0">{{comentario.usuario.nombre}}</a></h5>
                     <div class="rk-comment__meta">
                         <p class="ae-kappa">&nbsp; {{comentario.fechaComentario | date:'dd MMMM y' | uppercase}}</p>
                     </div>

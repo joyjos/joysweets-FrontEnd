@@ -6,4 +6,5 @@ export interface Comentario{
     fechaComentario:ɵLocaleDataIndex;
     length:number;
     idPost:number;
+    post: any;
 }

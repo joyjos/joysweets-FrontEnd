@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   info: any = {};
 
   //Creo un usuario de tipo Usuario vacío
-  usuario:Usuario[]=[];
+  usuario:Usuario;
 
   constructor(public authService:AuthService, public tokenService:TokenService, public usuarioService:UsuarioService) {
 
