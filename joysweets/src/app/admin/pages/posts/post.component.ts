@@ -4,7 +4,7 @@ import { Post } from '../../models/posts.model';
 import { ActivatedRoute, Router } from '@angular/router';
 
 //CKEditor 5
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import * as Editor from '@ckeditor/build/ckeditor';
 
 //Servicios
 import { PostService } from '../../services/post.service';
@@ -17,7 +17,7 @@ import { PostService } from '../../services/post.service';
 export class PostComponent implements OnInit {
 
   //Creo el editor
-  public Editor=ClassicEditor;
+  public Editor=Editor;
 
   forma:FormGroup;
 

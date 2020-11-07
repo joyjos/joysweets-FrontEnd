@@ -17,7 +17,7 @@ export class SidebarService {
     },
     {
       titulo: 'Mantenimiento',
-      icono: 'mdi mdi-folder-lock-open',
+      icono: 'mdi mdi-chart-bubble',
       submenu: [
         {titulo: 'Usuarios', url: '/admin/usuarios'},
         {titulo: 'Recetas', url: '/admin/posts'},

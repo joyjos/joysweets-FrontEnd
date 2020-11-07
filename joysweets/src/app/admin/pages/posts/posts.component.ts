@@ -46,7 +46,7 @@ export class PostsComponent implements OnInit {
 
     Swal.fire({
       title: 'Estás seguro?',
-      text: 'Estás a punto de borrar ' +post.nombre,
+      html: 'Estás a punto de borrar <br><span style="color:#197AAA">'+post.nombre+'</span>',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Sí, bórralo',

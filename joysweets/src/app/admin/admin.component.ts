@@ -19,6 +19,7 @@ export class AdminComponent implements OnInit {
     this.loadScript('../../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js');
     this.loadScript('../../assets/plugins/sparkline/jquery.sparkline.min.js');
     this.loadScript('../../assets/js/custom.min.js');
+    this.loadScript('../../assets/js/jasny-bootstrap.js');
     this.loadScript('../../assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup.min.js');
     this.loadScript('../../assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup-init.js');
     this.loadScript('../../assets/plugins/styleswitcher/jQuery.style.switcher.js');

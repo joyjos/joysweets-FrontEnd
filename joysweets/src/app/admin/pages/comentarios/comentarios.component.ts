@@ -47,7 +47,7 @@ export class ComentariosComponent implements OnInit {
 
     Swal.fire({
       title: 'Estás seguro?',
-      text: 'Estás a punto de borrar a ' +comentario.comentario,
+      text: 'Estás a punto de borrar el comentario',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Sí, bórralo',
@@ -64,7 +64,7 @@ export class ComentariosComponent implements OnInit {
           });
         Swal.fire(
           'Borrado!',
-          comentario.comentario+ ' ha sido borrado',
+          'El comentario ha sido borrado',
           'success'
         )
       }

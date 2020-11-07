@@ -18,7 +18,7 @@
                         </div>
                         <div class="form-group">
                             <label>Receta</label>
-                            <ckeditor [editor]="Editor" formControlName="post" name="post" required></ckeditor>
+                            <ckeditor [editor]="Editor" [config]="{ toolbar: [ 'heading', '|', 'fontFamily', 'fontSize', 'fontColor', '|', 'bold', 'italic', '|', 'numberedList', 'bulletedList', 'mediaEmbed', 'undo', 'redo' ] }" formControlName="post" name="post" required></ckeditor>
                         </div>
                         <div class="form-group">
                             <label>Imagen</label>

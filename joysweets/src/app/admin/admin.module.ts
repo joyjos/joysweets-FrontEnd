@@ -15,6 +15,8 @@ import { ComentariosComponent } from './pages/comentarios/comentarios.component'
 import { PostComponent } from './pages/posts/post.component';
 import { PostNuevoComponent } from './pages/posts/post-nuevo.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { ComentarioComponent } from './pages/comentarios/comentario.component';
+import { UsuarioComponent } from './pages/usuarios/usuario.component';
 
 //Módulos
 import { SharedModule } from './shared/shared.module';
@@ -24,12 +26,13 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 //Interceptor
 import { interceptorProvider } from './services/interceptor.service';
-import { ComentarioComponent } from './pages/comentarios/comentario.component';
+
+//Pipes
 import { FilterUserPipe } from './pipes/filter-user.pipe';
 import { FilterPostPipe } from './pipes/filter-post.pipe';
 import { FilterCommentPipe } from './pipes/filter-comment.pipe';
-import { UsuarioComponent } from './pages/usuarios/usuario.component';
 import { RolPipe } from './pipes/rol.pipe';
+import { TruncateRecetaPipe } from './pipes/truncate-receta.pipe';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,8 @@ import { RolPipe } from './pipes/rol.pipe';
     FilterPostPipe,
     FilterCommentPipe,
     UsuarioComponent,
-    RolPipe
+    RolPipe,
+    TruncateRecetaPipe
   ],
   imports: [
     CommonModule,

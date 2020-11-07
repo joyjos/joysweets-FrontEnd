@@ -88,7 +88,7 @@ export class RegisterComponent implements OnInit {
       },
       error=>{
         console.log(error.status);
-        Swal.fire('Error', error.error.mensaje, 'error');
+        Swal.fire('Error', 'Ya existe un usuario con el Email <br><span style="color:#197AAA">'+this.forma.value.username+'</span>', 'error');
       });
   }
 

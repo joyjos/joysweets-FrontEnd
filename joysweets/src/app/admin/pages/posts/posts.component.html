@@ -35,7 +35,7 @@
                         <tr *ngFor="let post of posts | filterPost:filterpost">
                             <td>{{post.nombre}}</td>
                             <td>{{post.categoria}}</td>
-                            <td [innerHTML]="post.post"></td>
+                            <td [innerHTML]="post.post | truncateReceta:130:true"></td>
                             <td id="image-popups">
                                 <a href="assets/img/{{post.imagen}}" data-effect="mfp-zoom-in"><img src="assets/img/{{post.imagen}}" class="img-responsive img-thumbnail img-50 pointer"></a>
                             </td>

@@ -88,3 +88,15 @@
 .rk-footer__text {
     color: #197AAA
 }
+
+
+/* CKEditor */
+
+.ck-editor__editable_inline {
+    min-height: 400px;
+    max-height: 400px;
+}
+
+.text-big {
+    font-size: 1.5rem;
+}

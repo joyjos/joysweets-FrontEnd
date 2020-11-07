@@ -28,7 +28,9 @@ export class AuthService {
     this.cargarStorage();
    }
 
+  //======================================
   //Método para saber si estoy logueado
+  //======================================
   estaLogueado(){
     if(this.tokenService.getToken()===null){
       return;
@@ -46,19 +48,23 @@ export class AuthService {
     }
   }
 
+  //=============================
   //Método para crear usuarios
+  //=============================
   public nuevo(nuevoUsuario:NuevoUsuario){
 
     let url=URL_SERVICES + '/auth/nuevo';
 
     return this.http.post(url, nuevoUsuario, {responseType: 'text'})
       .pipe(map((resp:any)=>{
-        Swal.fire('Usuario creado', nuevoUsuario.nombre, 'success');
+        Swal.fire('Usuario creado', '<span style="color:#197AAA">'+nuevoUsuario.nombre+'</span>', 'success');
         return resp.usuario;
       }));
   }
 
+  //=======================
   //Método para el login
+  //=======================
   public login(loginUsuario:LoginUsuario, recuerdame:boolean=false){
 
     let url=URL_SERVICES + '/auth/login';
@@ -73,7 +79,9 @@ export class AuthService {
     return this.http.post(url, loginUsuario);
   }
 
+  //========================
   //Método para el logout
+  //========================
   public logout(){
 
     //Elimino los datos en el Local Storage

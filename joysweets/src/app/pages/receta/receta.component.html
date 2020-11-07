@@ -3,45 +3,12 @@
         <div class="item-inside__meta">
             <h1 class="fondoNombre fondo ae-u-bolder rk-portfolio-title">{{receta.nombre}}</h1>
             <p class="ae-theta rk-portfolio-category"><span class="fondoCategoria fondo ae-u-bolder">{{receta.categoria}}</span></p>
-            <p class="ae-kappa ae-u-bold rk-portfolio-inner-date">{{receta.fechaPost | date:'dd MMMM y'}}</p>
+            <p class="ae-kappa ae-u-bold rk-portfolio-inner-date">{{receta.fechaPost | date:'dd MMMM y' | uppercase}}</p>
         </div>
     </header>
     <div class="ae-container-fluid ae-container-fluid--inner rk-portfolio--inner">
-        <div class="ae-grid ae-grid--collapse au-xs-ptp-1">
-            <div [innerHTML]="receta.post" class="ae-grid__item item-lg-5 au-lg-ptp-1">
-                {{receta.post}}
-            </div>
-            <div class="ae-grid__item item-lg-6 item-lg--offset-1"><img src="assets/img/{{receta.imagen}}" alt="{{receta.nombre}}"></div>
-        </div>
         <div class="ae-grid ae-grid--collapse au-xs-ptp-1 au-xs-pbp-1">
-            <div class="ae-grid ae-grid--alt au-lg-ta-left au-xs-ptp-1">
-                <h4 class="ae-u-bolder">Preparación</h4>
-                <p class="ae-eta">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-                <p>totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-                    ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea co</p>
-            </div>
-        </div>
-        <div class="ae-grid ae-grid--collapse au-xs-ptp-1 au-xs-pbp-1">
-            <div class="ae-grid__item--alt item-lg-12"><span class="ae-u-boldest">1.</span>
-                <p>Suspendisse ultricies tellus eget nisl molestie, quis sagittis mauris placerat.</p>
-                <p>Pellentesque et nulla pulvinar, bibendum quam ac, cursus turpis.</p>
-            </div>
-            <div class="ae-grid__item--alt item-lg-12"><span class="ae-u-boldest">2.</span>
-                <p>Sed quam odio, blandit sit amet dapibus id, aliquet sollicitudin enim.</p>
-                <p>Morbi hendrerit laoreet lectus a fringilla.</p>
-            </div>
-            <div class="ae-grid__item--alt item-lg-12"><span class="ae-u-boldest">3.</span>
-                <p>Sed quam odio, blandit sit amet dapibus id, aliquet sollicitudin enim. </p>
-                <p>Morbi hendrerit laoreet lectus a fringilla.</p>
-            </div>
-            <div class="ae-grid__item--alt item-lg-12"><span class="ae-u-boldest">4.</span>
-                <p>Sed quam odio, blandit sit amet dapibus id, aliquet sollicitudin enim. </p>
-                <p>Morbi hendrerit laoreet lectus a fringilla.</p>
-            </div>
-            <div class="ae-grid__item--alt item-lg-12"><span class="ae-u-boldest">5.</span>
-                <p>Sed quam odio, blandit sit amet dapibus id, aliquet sollicitudin enim. </p>
-                <p>Morbi hendrerit laoreet lectus a fringilla.</p>
+            <div [innerHTML]="receta.post" class="ae-grid__item--alt item-lg-12"><span class="ae-u-boldest">1.</span> {{receta.post}}
             </div>
         </div>
         <div class="ae-grid ae-grid--collapse au-xs-ptp-1">
@@ -58,7 +25,7 @@
                 <header class="rk-comment__header">
                     <h5 class="rk-comment__author ae-u-bolder"><a href="#0">{{comentario.usuario.nombre}}</a></h5>
                     <div class="rk-comment__meta">
-                        <p class="ae-kappa">&nbsp; {{comentario.fechaComentario | date:'dd MMMM y' | uppercase}}</p>
+                        <p class="ae-kappa">&nbsp; {{comentario.fechaComentario | date:'dd MMMM y' | titlecase}}</p>
                     </div>
                 </header>
                 <div class="rk-comment__body">
@@ -70,11 +37,8 @@
     <div class="ae-grid ae-grid--collapse inner-box-3">
         <div class="ae-grid__item item-lg-8 item-lg--offset-2">
             <form action="#0" class="ae-form--full">
-                <textarea placeholder="Deja tu comentario aquí ..." cols="30" rows="7"></textarea>
-                <input type="text" placeholder="* Nombre" required>
-                <input type="email" placeholder="* Email" required>
-                <input type="text" placeholder="Website">
-                <div class="au-pt-3 group-buttons"><a href="#0" class="au-mt-2 arrow-button arrow-button--right arrow-button--out">Envía comentario<span class="arrow-cont">
+                <textarea placeholder="Deja tu comentario aquí ..." cols="30"></textarea>
+                <div class="au-pt-3 group-buttons"><a routerLink="/login" class="au-mt-2 arrow-button arrow-button--right arrow-button--out">Envía comentario<span class="arrow-cont">
                 <svg>
                   <use xlink:href="assets/img/symbols.svg#arrow"></use>
                 </svg></span></a></div>
