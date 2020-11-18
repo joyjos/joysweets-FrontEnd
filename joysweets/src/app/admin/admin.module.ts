@@ -33,6 +33,7 @@ import { FilterPostPipe } from './pipes/filter-post.pipe';
 import { FilterCommentPipe } from './pipes/filter-comment.pipe';
 import { RolPipe } from './pipes/rol.pipe';
 import { TruncateRecetaPipe } from './pipes/truncate-receta.pipe';
+import { Sort2Pipe } from './pipes/sort2.pipe';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { TruncateRecetaPipe } from './pipes/truncate-receta.pipe';
     FilterCommentPipe,
     UsuarioComponent,
     RolPipe,
-    TruncateRecetaPipe
+    TruncateRecetaPipe,
+    Sort2Pipe
   ],
   imports: [
     CommonModule,

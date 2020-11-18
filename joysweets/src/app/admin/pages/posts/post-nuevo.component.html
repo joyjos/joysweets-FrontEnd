@@ -18,21 +18,14 @@
                         </div>
                         <div class="form-group">
                             <label>Receta</label>
-                            <ckeditor [editor]="Editor" [config]="{ toolbar: [ 'heading', '|', 'fontFamily', 'fontSize', 'fontColor', '|', 'bold', 'italic', '|', 'numberedList', 'bulletedList', 'mediaEmbed', 'undo', 'redo' ] }" formControlName="post" name="post" required></ckeditor>
+                            <ckeditor [editor]="Editor" formControlName="post" name="post" required></ckeditor>
                         </div>
-                        <fieldset class="form-group">
-                            <label>Elige una imagen</label>
-                            <label class="custom-file d-block">
-                                <input formControlName="imagen" name="imagen" type="file" id="file" class="custom-file-input">
-                                <span class="custom-file-control"></span>
-                            </label>
-                        </fieldset>
                         <div class="form-group">
-                            <label>Elige una imagen</label>
+                            <label>Elige una foto</label>
                             <div class="fileinput fileinput-new input-group" data-provides="fileinput">
                                 <div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div> <span class="input-group-addon btn btn-default btn-file"> <span class="fileinput-new">Selecciona archivo</span>
                                 <span class="fileinput-exists">Cambiar</span>
-                                <input type="file" name="..."> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a> </div>
+                                <input type="file" name="..." (change)="uploadFile($event)"> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a> </div>
                         </div>
                         <button type="submit" class="btn btn-success waves-effect waves-light m-r-10"><i class="fa fa-save"></i> Guardar</button>
                         <a routerLink="/admin/posts" class="btn btn-inverse waves-effect waves-light">Cancelar</a>

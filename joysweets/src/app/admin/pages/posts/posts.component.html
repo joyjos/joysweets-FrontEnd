@@ -26,18 +26,18 @@
                         <tr>
                             <th [ngStyle]="{'width':'20%'}">Nombre</th>
                             <th [ngStyle]="{'width':'5%'}">Categoría</th>
-                            <th [ngStyle]="{'width':'57%'}">Receta</th>
-                            <th [ngStyle]="{'width':'5%'}">Imagen</th>
+                            <th [ngStyle]="{'width':'52%'}">Receta</th>
+                            <th [ngStyle]="{'width':'10%'}">Foto</th>
                             <th [ngStyle]="{'width':'13%'}"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let post of posts | filterPost:filterpost">
+                        <tr *ngFor="let post of posts | filterPost:filterpost | sort2">
                             <td>{{post.nombre}}</td>
                             <td>{{post.categoria}}</td>
                             <td [innerHTML]="post.post | truncateReceta:130:true"></td>
                             <td id="image-popups">
-                                <a href="assets/img/{{post.imagen}}" data-effect="mfp-zoom-in"><img src="assets/img/{{post.imagen}}" class="img-responsive img-thumbnail img-50 pointer"></a>
+                                <a href="{{post.imagen}}" data-effect="mfp-zoom-in"><img src="{{post.imagen}}" class="img-responsive img-thumbnail img-50 pointer"></a>
                             </td>
                             <td>
                                 <button [routerLink]="[ '/admin/post', post.idPost]" class="btn btn-primary m-r-10" title="Modificar esta receta">

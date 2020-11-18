@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
 })
 export class UsuarioComponent implements OnInit {
 
-  forma:FormGroup;
+  form:FormGroup;
 
   //Creo un usuario de tipo Usuario vacío
   usuario:Usuario[]=[];
@@ -38,7 +38,7 @@ export class UsuarioComponent implements OnInit {
   ngOnInit(): void {
 
     //Validaciones
-    this.forma=new FormGroup({
+    this.form=new FormGroup({
       nombre:new FormControl(null, Validators.required),
       username:new FormControl(null, Validators.required),
       rol:new FormControl(null, Validators.required),
@@ -56,10 +56,10 @@ export class UsuarioComponent implements OnInit {
         this.usuario=resp;
 
         //Establezco los valores de los campos
-        this.forma.controls['nombre'].setValue(resp.nombre);
-        this.forma.controls['username'].setValue(resp.username);
-        this.forma.controls['rol'].setValue(resp.roles[0].roleName);
-        this.forma.controls['idUsuario'].setValue(resp.idUsuario);
+        this.form.controls['nombre'].setValue(resp.nombre);
+        this.form.controls['username'].setValue(resp.username);
+        this.form.controls['rol'].setValue(resp.roles[0].roleName);
+        this.form.controls['idUsuario'].setValue(resp.idUsuario);
       })
   }
 
@@ -79,7 +79,7 @@ export class UsuarioComponent implements OnInit {
     let idRol: number;
 
     //Le paso al objeto de tipo Usuario el idRol
-    if(this.forma.value.rol=='ROLE_ADMIN'){
+    if(this.form.value.rol=='ROLE_ADMIN'){
       idRol=1
     }else{
       idRol=2
@@ -87,13 +87,13 @@ export class UsuarioComponent implements OnInit {
 
     //Creo el objeto de tipo Usuario
     let nuevoUsuario={
-      'nombre':this.forma.value.nombre,
-      'username':this.forma.value.username,
-      'idUsuario':this.forma.value.idUsuario,
+      'nombre':this.form.value.nombre,
+      'username':this.form.value.username,
+      'idUsuario':this.form.value.idUsuario,
       'roles':[
         {
           'idRol':idRol,
-          'rolName': this.forma.value.rol
+          'rolName': this.form.value.rol
         }
       ]
     }

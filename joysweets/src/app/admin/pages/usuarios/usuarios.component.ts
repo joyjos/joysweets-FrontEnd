@@ -74,7 +74,7 @@ export class UsuariosComponent implements OnInit {
             });
           Swal.fire(
             'Borrado!',
-            usuario.nombre+ ' ha sido borrado',
+            '<span style="color:#197AAA">'+usuario.nombre+'</span> ha sido borrado',
             'success'
           )
         }

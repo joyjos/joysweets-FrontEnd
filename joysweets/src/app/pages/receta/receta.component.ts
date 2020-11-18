@@ -34,7 +34,7 @@ export class RecetaComponent implements OnInit {
         //console.log(params['id']);
         this.postsService.getReceta(params['id'])
           .subscribe((receta:Receta)=>{
-            //console.log(receta);
+            console.log(receta);
             this.id=params['id'];
             this.receta=receta;
           });

@@ -32,7 +32,7 @@
     <section class="ae-container-fluid ae-container-fluid--inner rk-blog">
         <div *ngFor="let post of postsService.posts | sort" class="rk-blog__items">
             <div class="rk-blog__item">
-                <div class="post-img post-1 rk-landscape-alt rk-tosquare" [ngStyle]="{'background-image':'url(assets/img/'+post.imagen+')'}">
+                <div class="post-img post-1 rk-landscape-alt rk-tosquare" [ngStyle]="{'background-image':'url('+post.imagen+')'}">
                     <div class="item-meta">
                         <p><a routerLink="/receta/{{post.idPost}}" class="arrow-button">Continuar Leyendo<span class="arrow-cont">
                     <svg>

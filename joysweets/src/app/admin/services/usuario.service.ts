@@ -60,7 +60,7 @@ export class UsuarioService {
     let url=URL_SERVICES + '/usuarios/modificarUsuario/' + usuario.idUsuario;
     return this.http.put(url, usuario, {responseType: 'text'})
       .pipe(map((resp:any)=>{
-        Swal.fire('Usuario actualizado', usuario.nombre, 'success');
+        Swal.fire('Usuario actualizado', '<span style="color:#197AAA">'+usuario.nombre+'</span>', 'success');
         return resp.usuario;
     }));
   }

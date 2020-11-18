@@ -63,7 +63,7 @@ export class PostsComponent implements OnInit {
           });
         Swal.fire(
           'Borrado!',
-          post.nombre+ ' ha sido borrado',
+          '<span style="color:#197AAA">'+post.nombre+'</span> ha sido borrado',
           'success'
         )
       }

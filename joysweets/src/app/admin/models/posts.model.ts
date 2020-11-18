@@ -5,7 +5,7 @@ export class Post{
         public nombre:string,
         public categoria:string,
         public post:string,
-        public imagen:string,
+        public imagen?:string,
         public fechaPost?:ɵLocaleDataIndex,
         public idPost?:number
     ){}

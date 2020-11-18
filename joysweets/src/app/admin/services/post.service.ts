@@ -44,24 +44,24 @@ export class PostService {
   //============================
   //Método para crear un post
   //============================
-  crearPost(post:Post){
+  crearPost(formData:FormData){
     let url=URL_SERVICES + '/posts/insertarPost';
-    return this.http.post(url, post, {responseType: 'text'})
+    return this.http.post(url, formData, {responseType: 'text'})
       .pipe(map((resp:any)=>{
-        Swal.fire('Receta creada', post.nombre, 'success');
-        return resp.post;
+        Swal.fire('Receta creada', 'post.nombre', 'success');
+        return resp.formData;
       }));
   }
 
   //=================================
   //Método para actualizar un post
   //=================================
-  actualizarPost(id:number, post:Post){
+  actualizarPost(id:number, formData:FormData){
     let url=URL_SERVICES + '/posts/modificarPost/' + id;
-    return this.http.put(url, post)
+    return this.http.put(url, formData, {responseType: 'text'})
       .pipe(map((resp:any)=>{
-        Swal.fire('Receta actualizada', post.nombre, 'success');
-        return resp.post;
+        Swal.fire('Receta actualizada', 'Receta actualizada con éxito', 'success');
+        return resp.formData;
       }));
   }
 
