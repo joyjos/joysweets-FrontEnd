@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class ComentarioComponent implements OnInit {
 
-  forma:FormGroup;
+  form:FormGroup;
 
   //Creo un comentario de tipo Comentario vacío
   comentario:Comentario[]=[];
@@ -34,7 +34,7 @@ export class ComentarioComponent implements OnInit {
   ngOnInit(): void {
 
     //Validaciones
-    this.forma=new FormGroup({
+    this.form=new FormGroup({
       comentario:new FormControl(null, Validators.required),
       fechaComentario:new FormControl(null, Validators.required),
       idComentario:new FormControl
@@ -51,9 +51,9 @@ export class ComentarioComponent implements OnInit {
         this.comentario=resp;
 
         //Establezco los valores de los campos
-        this.forma.controls['comentario'].setValue(resp.comentario);
-        this.forma.controls['fechaComentario'].setValue(resp.fechaComentario);
-        this.forma.controls['idComentario'].setValue(resp.idComentario);
+        this.form.controls['comentario'].setValue(resp.comentario);
+        this.form.controls['fechaComentario'].setValue(resp.fechaComentario);
+        this.form.controls['idComentario'].setValue(resp.idComentario);
       });
   }
 
@@ -64,9 +64,9 @@ export class ComentarioComponent implements OnInit {
 
     //Creo el objeto de tipo Comentario
     let nuevoComentario=new Comentario(
-      this.forma.value.comentario,
-      this.forma.value.fechaComentario,
-      this.forma.value.idComentario
+      this.form.value.comentario,
+      this.form.value.fechaComentario,
+      this.form.value.idComentario
     );
 
     //console.log(nuevoComentario);

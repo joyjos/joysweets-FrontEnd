@@ -6,7 +6,7 @@
             <h6 class="card-subtitle">Dulces Emociones</h6>
             <div class="row">
                 <div class="col-sm-12 col-xs-12">
-                    <form ngNativeValidate [formGroup]="forma" (ngSubmit)="actualizarComentario()">
+                    <form ngNativeValidate [formGroup]="form" (ngSubmit)="actualizarComentario()">
                         <div class="form-group">
                             <label>Comentario</label>
                             <textarea formControlName="comentario" name="comentario" class="form-control" rows="5" required></textarea>

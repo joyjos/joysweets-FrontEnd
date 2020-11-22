@@ -16,19 +16,15 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Comentario</th>
+                            <th [ngStyle]="{'width':'52%'}">Comentario</th>
                             <th>Fecha</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th [ngStyle]="{'width':'13%'}"></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let comentario of comentarios | filterComment:filtercomment">
                             <td>{{comentario.comentario}}</td>
                             <td>{{comentario.fechaComentario | date: 'EEEE, d MMMM y' | titlecase}}</td>
-                            <td></td>
-                            <td></td>
                             <td>
                                 <button [routerLink]="['/admin/comentario', comentario.idComentario]" class="btn btn-primary m-r-10" title="Modificar este comentario">
                                     <i class="fa fa-pencil"></i>

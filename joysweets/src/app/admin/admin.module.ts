@@ -17,6 +17,7 @@ import { PostNuevoComponent } from './pages/posts/post-nuevo.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { ComentarioComponent } from './pages/comentarios/comentario.component';
 import { UsuarioComponent } from './pages/usuarios/usuario.component';
+import { LoginUrlComponent } from './login/login-url.component';
 
 //Módulos
 import { SharedModule } from './shared/shared.module';
@@ -54,7 +55,8 @@ import { Sort2Pipe } from './pipes/sort2.pipe';
     UsuarioComponent,
     RolPipe,
     TruncateRecetaPipe,
-    Sort2Pipe
+    Sort2Pipe,
+    LoginUrlComponent
   ],
   imports: [
     CommonModule,

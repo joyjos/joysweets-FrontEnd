@@ -39,7 +39,7 @@ export class PostNuevoComponent implements OnInit {
       post: [''],
       imagen: ['']
 
-    })
+    });
    }
 
   ngOnInit(): void {

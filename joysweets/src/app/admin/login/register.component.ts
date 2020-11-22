@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  forma:FormGroup;
+  form:FormGroup;
 
   constructor(public authService:AuthService, public router:Router) { }
 
@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
 
     //Validaciones
-    this.forma=new FormGroup({
+    this.form=new FormGroup({
       nombre:new FormControl(null, Validators.required),
       username:new FormControl(null, [Validators.required, Validators.email]),
       password:new FormControl(null, Validators.required),
@@ -56,11 +56,11 @@ export class RegisterComponent implements OnInit {
   registrarUsuario(){
     
     //Compruebo que el formulario es válido
-    if(this.forma.invalid){
+    if(this.form.invalid){
       return;
     }
 
-    if(!this.forma.value.condiciones){
+    if(!this.form.value.condiciones){
       Swal.fire({
         title: 'Importante',
         text: 'Debes aceptar las condiciones',
@@ -74,9 +74,9 @@ export class RegisterComponent implements OnInit {
 
     //Creo un objeto de tipo Usuario
     let nuevoUsuario=new NuevoUsuario(
-      this.forma.value.nombre,
-      this.forma.value.username,
-      this.forma.value.password
+      this.form.value.nombre,
+      this.form.value.username,
+      this.form.value.password
     );
 
     //Llamo al servicio
@@ -88,7 +88,7 @@ export class RegisterComponent implements OnInit {
       },
       error=>{
         console.log(error.status);
-        Swal.fire('Error', 'Ya existe un usuario con el Email <br><span style="color:#197AAA">'+this.forma.value.username+'</span>', 'error');
+        Swal.fire('Error', 'Ya existe un usuario con el Email <br><span style="color:#197AAA">'+this.form.value.username+'</span>', 'error');
       });
   }
 

@@ -17,8 +17,7 @@
     </div>
 </section>
 <ul *ngIf="comentarios" class="ae-container-fluid ae-container-fluid--inner rk-comments">
-    <h3 *ngIf="comentarios.length!=1" class="rk-comments__title ae-u-bolder">{{comentarios.length}} Comentarios</h3>
-    <h3 *ngIf="comentarios.length==1" class="rk-comments__title ae-u-bolder">{{comentarios.length}} Comentario</h3>
+    <h3 class="rk-comments__title ae-u-bolder">{{comentarios.length}} Comentarios</h3>
     <li>
         <article *ngFor="let comentario of comentarios | sort" class="rk-comment">
             <aside class="rk-comment__avatar"><img src="assets/img/user-2.jpg" alt="" class="rk-comment__avatar au-circle"></aside>
@@ -36,8 +35,11 @@
         </article>
     </li>
     <div class="ae-grid ae-grid--collapse inner-box-3">
-        <div class="ae-grid__item item-lg-8 item-lg--offset-2 text-center">
-            <button routerLink="/loginUrl/{{receta.idPost}}" class="btn btn-info btn-lg text-uppercase" type="submit">Envía comentario</button>
+        <div class="ae-grid__item item-lg-8 item-lg--offset-2">
+            <form class="ae-form--full" [formGroup]="form" (ngSubmit)="crearComentario()">
+                <textarea formControlName="comentario" class="form-group" placeholder="Deja tu comentario aquí ..." cols="30"></textarea>
+                <button class="btn btn-info btn-lg btn-block text-uppercase" type="submit">Enviar comentario</button>
+            </form>
         </div>
     </div>
 </ul>

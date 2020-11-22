@@ -42,6 +42,14 @@ export class ComentarioService {
   }
 
   //=======================================
+  //Método para crear un comentario
+  //=======================================
+  crearComentario(idPost:number, idUsuario:number, comentario:Comentario){
+    let url=URL_SERVICES + '/comentarios/comentarios/'+ idPost +'/'+ idUsuario;
+    return this.http.post(url, comentario, {responseType: 'text'});
+  }
+
+  //=======================================
   //Método para actualizar un comentario
   //=======================================
   actualizarComentario(comentario:Comentario){

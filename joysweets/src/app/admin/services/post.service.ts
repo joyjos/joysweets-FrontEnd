@@ -65,4 +65,16 @@ export class PostService {
       }));
   }
 
+  //==========================================
+  //Método para actualizar un post sin foto
+  //==========================================
+  actualizarPostNoFile(id:number, formData:FormData){
+    let url=URL_SERVICES + '/posts/modificarPostNoFile/' + id;
+    return this.http.put(url, formData, {responseType: 'text'})
+      .pipe(map((resp:any)=>{
+        Swal.fire('Receta actualizada', 'Receta actualizada con éxito', 'success');
+        return resp.formData;
+      }));
+  }
+
 }

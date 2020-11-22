@@ -24,7 +24,7 @@ export class SidebarComponent implements OnInit {
 
   constructor(public sidebarService:SidebarService, public usuarioService:UsuarioService, public authService:AuthService, public tokenService:TokenService) {
 
-    //Cargo el username
+    //Cargo el username del Local Storage
     let username=localStorage.getItem(USERNAME_KEY);
     //console.log(username);
 

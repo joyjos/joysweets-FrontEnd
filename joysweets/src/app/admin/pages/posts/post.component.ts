@@ -81,44 +81,75 @@ export class PostComponent implements OnInit {
   
   actualizarPost(){
 
-    //Si no cambio la foto
-    if(!this.file){
+    //Si actualizo la foto
+    if(this.file!=null){
 
-    }
+      //Creo el "pdto"
+      const pdto={
+        "nombre":this.form.get('nombre').value,
+        "categoria":this.form.get('categoria').value,
+        "post":this.form.get('post').value
+      }
 
-    //Creo el "pdto"
-    const pdto={
-      "nombre":this.form.get('nombre').value,
-      "categoria":this.form.get('categoria').value,
-      "post":this.form.get('post').value
-    }
+      //console.log(pdto);
 
-    console.log(pdto);
-
-    //El Content-Type tiene que ser application/json
-    const json = JSON.stringify(pdto);
-    const blob = new Blob([json], {
-      type: 'application/json'
-    });
-
-    //Creo el formData que voy a mandar agregando los campos con sus valores 
-    let formData=new FormData();
-    formData.append("pdto",blob);
-    formData.append("file", this.form.get('imagen').value);
-    console.log(formData);
-
-    //Llamo al servicio
-    this.postService.actualizarPost(this.post.idPost, formData)
-      .subscribe(resp=>{
-        console.log(resp);
-        //Modificado el post, regreso a la página de posts
-        this.router.navigate(['/admin/posts']);
-        Swal.fire({
-          title:'Receta actualizada',
-          html:'<span style="color:#197AAA">'+pdto.nombre+'</span>',
-          icon:'success'
-        })
+      //El Content-Type tiene que ser application/json
+      const json = JSON.stringify(pdto);
+      const blob = new Blob([json], {
+        type: 'application/json'
       });
+
+      //Creo el formData que voy a mandar agregando los campos con sus valores 
+      let formData=new FormData();
+      formData.append("pdto",blob);
+      formData.append("file", this.form.get('imagen').value);
+      //console.log(formData);
+
+      //Llamo al servicio
+      this.postService.actualizarPost(this.post.idPost, formData)
+        .subscribe(resp=>{
+          //console.log(resp);
+          //Modificado el post, regreso a la página de posts
+          this.router.navigate(['/admin/posts']);
+          Swal.fire({
+            title:'Receta actualizada',
+            html:'<span style="color:#197AAA">'+pdto.nombre+'</span>',
+            icon:'success'
+          })
+        });
+    }else{ //Si no actualizo la foto
+      
+      //Creo el "pdto"
+      const pdto={
+        "nombre":this.form.get('nombre').value,
+        "categoria":this.form.get('categoria').value,
+        "post":this.form.get('post').value
+      }
+
+      //El Content-Type tiene que ser application/json
+      const json = JSON.stringify(pdto);
+      const blob = new Blob([json], {
+        type: 'application/json'
+      });
+
+      //Creo el formData que voy a mandar agregando los campos con sus valores 
+      let formData=new FormData();
+      formData.append("pdto",blob);
+      //console.log(formData);
+
+      //Llamo al servicio
+      this.postService.actualizarPostNoFile(this.post.idPost, formData)
+        .subscribe(resp=>{
+          //console.log(resp);
+          //Modificado el post, regreso a la página de posts
+          this.router.navigate(['/admin/posts']);
+          Swal.fire({
+            title:'Receta actualizada',
+            html:'<span style="color:#197AAA">'+pdto.nombre+'</span>',
+            icon:'success'
+          })
+        });
+    }
   }
 
 }

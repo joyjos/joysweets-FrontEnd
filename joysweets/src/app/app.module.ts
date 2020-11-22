@@ -19,6 +19,8 @@ import { RecetaComponent } from './pages/receta/receta.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { PagesComponent } from './pages/pages.component';
+import { RecetaComentarioComponent } from './pages/receta/receta-comentario.component';
+
 
 //Cambiar idioma a castellano
 import { registerLocaleData } from '@angular/common';
@@ -26,11 +28,12 @@ import localeES from '@angular/common/locales/es';
 registerLocaleData(localeES, 'es');
 
 //Formularios
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 //Pipes
 import { SortPipe } from './pipes/sort.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
+
 
 @NgModule({
   declarations: [
@@ -46,6 +49,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     PagesComponent,
     SortPipe,
     TruncatePipe,
+    RecetaComentarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     FormsModule,
     AdminModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'es' }

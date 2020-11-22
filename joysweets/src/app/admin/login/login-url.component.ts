@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import Swal from 'sweetalert2';
+import { ActivatedRoute, Router } from '@angular/router';
 
 //Servicios
 import { AuthService } from '../services/auth.service';
@@ -10,26 +9,28 @@ import { TokenService } from '../services/token.service';
 import { LoginUsuario } from '../models/LoginUsuario';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
+  selector: 'app-login-url',
+  templateUrl: './login-url.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginUrlComponent implements OnInit {
 
   username:string;
-  recuerdame:boolean=false;
 
-  constructor(public router:Router, public authService:AuthService, public tokenService:TokenService) { }
+  constructor(public router:Router, public authService:AuthService, public tokenService:TokenService, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    
+
     //Le paso el valor al campo del formulario
     this.username=localStorage.getItem('username') || '';
 
-    //Si el campo username tiene algo, quiero que esté seleccionado el Recuérdame
-    if(this.username.length>1){
-      this.recuerdame=true;
-    }
+    this.activatedRoute.params
+      .subscribe(params=>{
+        console.log(params['id']);
+
+        //Guardo en Local Storage la receta donde voy a dejar el comentario
+        localStorage.setItem('urlComentario', params['id']);
+      });
   }
 
   ingresar(forma:NgForm){
@@ -65,7 +66,8 @@ export class LoginComponent implements OnInit {
           //   //Si las credenciales son correctas redirecciono al dashboard
           //   this.router.navigate(['/admin/dashboard']);
           // }
-          this.router.navigate(['/admin/dashboard']);
+          let urlComentario=localStorage.getItem('urlComentario');
+          this.router.navigate(['/recetaComentario/'+urlComentario]);
           
         });
 

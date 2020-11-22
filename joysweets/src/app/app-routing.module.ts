@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { RecetaComponent } from './pages/receta/receta.component';
+import { RecetaComentarioComponent } from './pages/receta/receta-comentario.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { AdminComponent } from './admin/admin.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
       {path: 'about', component: AboutComponent},
       {path: 'blog', component: BlogComponent},
       {path: 'receta/:id', component: RecetaComponent},
+      {path: 'recetaComentario/:id', component: RecetaComentarioComponent},
       {path: 'contacto', component: ContactoComponent},
       {path: '', pathMatch: 'full', redirectTo: 'home'},
     ]

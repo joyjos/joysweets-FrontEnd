@@ -89,8 +89,9 @@ export class AuthService {
     localStorage.removeItem('AuthUserName');
     localStorage.removeItem('AuthAuthorities');
     localStorage.removeItem('username');
+    localStorage.removeItem('urlComentario');
 
-    //Redirecciono al login
-    this.router.navigate(['/login']);
+    //Redirecciono al home
+    this.router.navigate(['/home']);
   }
 }

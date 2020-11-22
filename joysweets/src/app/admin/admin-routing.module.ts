@@ -14,6 +14,7 @@ import { PostComponent } from './pages/posts/post.component';
 import { PostNuevoComponent } from './pages/posts/post-nuevo.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { UsuarioComponent } from './pages/usuarios/usuario.component';
+import { LoginUrlComponent } from './login/login-url.component';
 
 //Guard
 import { LoginGuard } from './services/guards/login.guard';
@@ -37,6 +38,7 @@ const adminRoutes:Routes=[
         ],       
      },
      {path: 'login', component: LoginComponent},
+     {path: 'loginUrl/:id', component: LoginUrlComponent},
      {path: 'register', component: RegisterComponent},
 ];
 
