@@ -44,11 +44,20 @@
                     <h2 class="blog-info__title"> <a routerLink="/receta/{{post.idPost}}">{{post.nombre}}</a></h2>
                     <p [innerHTML]="post.post | truncate:170:true" class="blog-info__excerpt"></p>
                 </div>
-                <div class="blog-meta"><a routerLink="/receta/{{post.idPost}}" class="ae-u-bolder blog-meta__comments">{{post.usuarios.length}} Comentarios</a><span class="ae-kappa ae-u-bold blog-meta__date">{{post.fechaPost | date:'dd MMMM y' | titlecase}}</span><a routerLink="/receta/{{post.idPost}}"
-                        class="arrow-button blog-meta__read-more">Continuar Leyendo<span class="arrow-cont">
+                <div *ngIf="post.usuarios.length!=1" class="blog-meta">
+                    <a routerLink="/receta/{{post.idPost}}" class="ae-u-bolder blog-meta__comments">{{post.usuarios.length}} Comentarios</a>
+                    <span class="ae-kappa ae-u-bold blog-meta__date">{{post.fechaPost | date:'dd MMMM y' | titlecase}}</span><a routerLink="/receta/{{post.idPost}}" class="arrow-button blog-meta__read-more">Continuar Leyendo<span class="arrow-cont">
                 <svg>
                   <use xlink:href="assets/img/symbols.svg#arrow"></use>
-                </svg></span></a></div>
+                </svg>
+              </span></a></div>
+                <div *ngIf="post.usuarios.length==1" class="blog-meta">
+                    <a *ngIf="post.usuarios.length==1" routerLink="/receta/{{post.idPost}}" class="ae-u-bolder blog-meta__comments">{{post.usuarios.length}} Comentario</a>
+                    <span class="ae-kappa ae-u-bold blog-meta__date">{{post.fechaPost | date:'dd MMMM y' | titlecase}}</span><a routerLink="/receta/{{post.idPost}}" class="arrow-button blog-meta__read-more">Continuar Leyendo<span class="arrow-cont">
+              <svg>
+                <use xlink:href="assets/img/symbols.svg#arrow"></use>
+              </svg>
+            </span></a></div>
             </div>
         </div>
     </section>

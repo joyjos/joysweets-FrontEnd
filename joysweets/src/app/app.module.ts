@@ -20,7 +20,10 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { PagesComponent } from './pages/pages.component';
 import { RecetaComentarioComponent } from './pages/receta/receta-comentario.component';
-
+import { PrivacidadComponent } from './pages/privacidad/privacidad.component';
+import { AvisoLegalComponent } from './pages/aviso-legal/aviso-legal.component';
+import { CookiesComponent } from './pages/cookies/cookies.component';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 
 //Cambiar idioma a castellano
 import { registerLocaleData } from '@angular/common';
@@ -33,7 +36,6 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 //Pipes
 import { SortPipe } from './pipes/sort.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
-
 
 @NgModule({
   declarations: [
@@ -50,6 +52,10 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     SortPipe,
     TruncatePipe,
     RecetaComentarioComponent,
+    PrivacidadComponent,
+    AvisoLegalComponent,
+    CookiesComponent,
+    ScrollToTopComponent
   ],
   imports: [
     BrowserModule,

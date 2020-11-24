@@ -15,6 +15,9 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './admin/login/login.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { RegisterComponent } from './admin/login/register.component';
+import { PrivacidadComponent } from './pages/privacidad/privacidad.component';
+import { AvisoLegalComponent } from './pages/aviso-legal/aviso-legal.component';
+import { CookiesComponent } from './pages/cookies/cookies.component';
 
 //Guard
 import { LoginGuard } from './admin/services/guards/login.guard';
@@ -42,6 +45,9 @@ const routes: Routes = [
       {path: 'receta/:id', component: RecetaComponent},
       {path: 'recetaComentario/:id', component: RecetaComentarioComponent},
       {path: 'contacto', component: ContactoComponent},
+      {path: 'avisoLegal', component: AvisoLegalComponent},
+      {path: 'privacidad', component: PrivacidadComponent},
+      {path: 'cookies', component: CookiesComponent},
       {path: '', pathMatch: 'full', redirectTo: 'home'},
     ]
   },

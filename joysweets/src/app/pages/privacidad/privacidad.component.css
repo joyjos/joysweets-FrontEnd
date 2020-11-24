@@ -1,0 +1,18 @@
+h3 {
+    font-weight: 500 !important;
+}
+
+.azul {
+    color: #4C99C0;
+    font-weight: 500;
+}
+
+.azulCookies {
+    color: #4C99C0;
+    font-weight: 400;
+}
+
+.justify {
+    text-align: justify;
+    text-justify: inter-word;
+}

@@ -104,3 +104,16 @@
 .text-big {
     font-size: 1.5rem;
 }
+
+
+/* Texto seleccionado */
+
+*::selection {
+    background-color: #FFC803;
+    color: #fff;
+}
+
+*::-moz-selection {
+    background-color: #FFC803;
+    color: #fff;
+}
