@@ -32,22 +32,22 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  ingresar(forma:NgForm){
-    //console.log(forma.valid);
-    //console.log(forma.value);
+  ingresar(form:NgForm){
+    //console.log(form.valid);
+    //console.log(form.value);
 
-    if(forma.invalid){
+    if(form.invalid){
       return;
     }
 
     //Creo un objeto de tipo LoginUsuario
     let loginUsuario=new LoginUsuario(
-      forma.value.username,
-      forma.value.password
+      form.value.username,
+      form.value.password
       );
 
       //Llamo al servicio
-      this.authService.login(loginUsuario, forma.value.recuerdame)
+      this.authService.login(loginUsuario, form.value.recuerdame)
         .subscribe((resp:any)=>{
           //console.log(resp);
 
@@ -65,11 +65,14 @@ export class LoginComponent implements OnInit {
           //   //Si las credenciales son correctas redirecciono al dashboard
           //   this.router.navigate(['/admin/dashboard']);
           // }
-          this.router.navigate(['/admin/dashboard']);
+          this.router.navigate(['/admin/perfil']);
           
+        },
+        error=>{
+          console.log(error.status);
+          Swal.fire('Error', 'La cuenta o la contraseña es incorrecta', 'error');
         });
-
-        
+ 
   }
 
 }

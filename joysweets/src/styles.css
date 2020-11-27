@@ -109,11 +109,49 @@
 /* Texto seleccionado */
 
 *::selection {
-    background-color: #FFC803;
+    background-color: #F7AFBE;
     color: #fff;
 }
 
 *::-moz-selection {
-    background-color: #FFC803;
+    background-color: #F7AFBE;
     color: #fff;
+}
+
+
+/* Cookies */
+
+.cc-revoke,
+.cc-window {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+}
+
+.cc-color-override--1986190269 .cc-link,
+.cc-color-override--1986190269 .cc-link:active,
+.cc-color-override--1986190269 .cc-link:visited {
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.cc-color-override--1986190269 .cc-btn:hover,
+.cc-color-override--1986190269 .cc-btn:focus {
+    background-color: #F7AFBE !important;
+    border-color: #F8DCE0 !important;
+}
+
+.cc-color-override--1101889584 .cc-btn {
+    border-color: #F8DCE0 !important;
+}
+
+
+/* Paginación*/
+
+.ngx-pagination {
+    margin-bottom: 0 !important;
+}
+
+.ngx-pagination .current {
+    background: #F7AFBE !important;
+    border-radius: 10%;
 }

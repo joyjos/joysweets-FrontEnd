@@ -22,6 +22,8 @@ export class SidebarComponent implements OnInit {
   //Creo un usuario de tipo Usuario vacío
   usuario:Usuario;
 
+  roleName:string;
+
   constructor(public sidebarService:SidebarService, public usuarioService:UsuarioService, public authService:AuthService, public tokenService:TokenService) {
 
     //Cargo el username del Local Storage
@@ -31,6 +33,12 @@ export class SidebarComponent implements OnInit {
     //Cargo el usuario por username
     this.cargarUsuarioU(username);
 
+    //Busco el rolName
+    this.usuarioService.cargarUsuarioU(username)
+        .subscribe((resp:any)=>{
+          this.usuario=resp;
+          this.roleName=this.usuario.roles[0].roleName;
+      });
    }
 
   ngOnInit(): void {

@@ -8,6 +8,9 @@ import { PostsService } from '../../services/posts.service';
 })
 export class BlogComponent implements OnInit {
 
+  //Variable para la paginación
+  page:number;
+
   constructor(public postsService:PostsService) { }
 
   ngOnInit(): void {

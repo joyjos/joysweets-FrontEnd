@@ -21,6 +21,9 @@ export class UsuariosComponent implements OnInit {
   //Creo el filtro vacío
   filteruser='';
 
+  //Variable para la paginación
+  page:number;
+
   constructor(public usuarioService:UsuarioService) { }
 
   ngOnInit(): void {

@@ -22,6 +22,15 @@ export class UsuarioService {
    }
 
    //==================================
+   //Método para cargar el rol de un usuario
+   //==================================
+   getRoleName():string{
+    console.log(this.usuario.roleName);
+     return this.usuario.roleName;
+     
+   }
+
+   //==================================
    //Método para cargar los usuarios
    //==================================
    cargarUsuarios(){

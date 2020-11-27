@@ -37,6 +37,9 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SortPipe } from './pipes/sort.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
 
+//Paginación
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +66,8 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     FormsModule,
     AdminModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'es' }

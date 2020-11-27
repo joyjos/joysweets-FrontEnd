@@ -21,6 +21,9 @@ export class ComentariosComponent implements OnInit {
   //Creo el filtro vacío
   filtercomment='';
 
+  //Variable para la paginación
+  page:number;
+
   constructor(public comentarioService:ComentarioService) { }
 
   ngOnInit(): void {

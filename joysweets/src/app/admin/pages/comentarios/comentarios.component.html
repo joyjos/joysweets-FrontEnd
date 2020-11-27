@@ -22,7 +22,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let comentario of comentarios | filterComment:filtercomment">
+                        <tr *ngFor="let comentario of comentarios | filterComment:filtercomment | paginate:{itemsPerPage:5, currentPage:page}">
                             <td>{{comentario.comentario}}</td>
                             <td>{{comentario.fechaComentario | date: 'EEEE, d MMMM y' | titlecase}}</td>
                             <td>
@@ -36,6 +36,16 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body text-center">
+                <pagination-controls (pageChange)="page=$event" previousLabel="Anterior" nextLabel="Siguiente" responsive="true">
+                </pagination-controls>
             </div>
         </div>
     </div>

@@ -36,6 +36,9 @@ import { RolPipe } from './pipes/rol.pipe';
 import { TruncateRecetaPipe } from './pipes/truncate-receta.pipe';
 import { Sort2Pipe } from './pipes/sort2.pipe';
 
+//Paginación
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AdminComponent,
@@ -66,6 +69,7 @@ import { Sort2Pipe } from './pipes/sort2.pipe';
     HttpClientModule,
     CKEditorModule,
     AdminRoutingModule,
+    NgxPaginationModule
   ],
   exports: [
     DashboardComponent,

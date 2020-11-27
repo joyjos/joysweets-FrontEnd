@@ -30,7 +30,7 @@
       </svg>
     </div>
     <section class="ae-container-fluid ae-container-fluid--inner rk-blog">
-        <div *ngFor="let post of postsService.posts | sort" class="rk-blog__items">
+        <div *ngFor="let post of postsService.posts | sort | paginate:{itemsPerPage:3, currentPage:page}" class="rk-blog__items">
             <div class="rk-blog__item">
                 <div class="post-img post-1 rk-landscape-alt rk-tosquare" [ngStyle]="{'background-image':'url('+post.imagen+')'}">
                     <div class="item-meta">
@@ -61,6 +61,10 @@
             </div>
         </div>
     </section>
+    <div class="ae-container-fluid au-pb-4 group-buttons">
+        <pagination-controls (pageChange)="page=$event" previousLabel="Anterior" nextLabel="Siguiente" responsive="true">
+        </pagination-controls>
+    </div>
     <div class="ae-container-fluid au-pb-4 group-buttons"><a href="#0" class="arrow-button arrow-button--reverse arrow-button--center">Antiguas Recetas
         <div class="arrow-cont arrow-cont-rev">
           <svg>

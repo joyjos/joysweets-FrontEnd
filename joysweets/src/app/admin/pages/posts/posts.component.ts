@@ -20,6 +20,9 @@ export class PostsComponent implements OnInit {
     //Creo el filtro vacío
     filterpost='';
 
+    //Variable para la paginación
+    page:number;
+
   constructor(public postService:PostService) { }
 
   ngOnInit(): void {

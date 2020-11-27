@@ -44,7 +44,7 @@ export class PerfilComponent implements OnInit {
   cargarUsuarioU(username:string){
     this.usuarioService.cargarUsuarioU(username)
       .subscribe((resp:any)=>{
-        console.log(resp);
+        //console.log(resp);
 
         this.usuario=resp;
 
