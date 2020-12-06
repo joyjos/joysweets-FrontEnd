@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+//Modelos
 import { Usuario } from '../../models/usuarios.model';
 
 //Servicios
@@ -33,7 +35,7 @@ export class SidebarComponent implements OnInit {
     //Cargo el usuario por username
     this.cargarUsuarioU(username);
 
-    //Busco el rolName
+    //Busco el rolName para ocultar parte del panel a los usuarios que no son ADMIN
     this.usuarioService.cargarUsuarioU(username)
         .subscribe((resp:any)=>{
           this.usuario=resp;

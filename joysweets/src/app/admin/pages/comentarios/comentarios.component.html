@@ -2,7 +2,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <input [(ngModel)]="filtercomment" name="filtercomment" type="text" class="form-control joy" placeholder="&#xf002; Buscar..." style="font-family:'Montserrat', FontAwesome">
+                <input [(ngModel)]="filtercomment" name="filtercomment" type="text" class="form-control joy" placeholder="&#xf002; Buscar comentario ..." style="font-family:'Montserrat', FontAwesome">
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let comentario of comentarios | filterComment:filtercomment | paginate:{itemsPerPage:5, currentPage:page}">
+                        <tr *ngFor="let comentario of comentarios | filterComment:filtercomment | sort2 | paginate:{itemsPerPage:5, currentPage:page}">
                             <td>{{comentario.comentario}}</td>
                             <td>{{comentario.fechaComentario | date: 'EEEE, d MMMM y' | titlecase}}</td>
                             <td>

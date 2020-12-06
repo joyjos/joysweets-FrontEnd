@@ -13,7 +13,7 @@ import { TokenService } from '../../services/token.service';
 })
 export class PerfilComponent implements OnInit {
 
-  forma:FormGroup;
+  form:FormGroup;
 
   //Creo un usuario de tipo Usuario vacío
   usuario:Usuario[]=[];
@@ -31,7 +31,7 @@ export class PerfilComponent implements OnInit {
   ngOnInit(): void {
 
     //Validaciones
-    this.forma=new FormGroup({
+    this.form=new FormGroup({
       nombre:new FormControl(null),
       username:new FormControl(null),
       password:new FormControl(null),
@@ -49,9 +49,9 @@ export class PerfilComponent implements OnInit {
         this.usuario=resp;
 
         //Establezco los valores de los campos
-        this.forma.controls['nombre'].setValue(resp.nombre);
-        this.forma.controls['username'].setValue(resp.username);
-        this.forma.controls['password'].setValue(resp.password);
+        this.form.controls['nombre'].setValue(resp.nombre);
+        this.form.controls['username'].setValue(resp.username);
+        this.form.controls['password'].setValue(resp.password);
       });
   }
 

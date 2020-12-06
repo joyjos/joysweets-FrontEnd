@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'joysweets';
 
-  cookieMessage="Este sitio web utiliza cookies para garantizar que obtenga la mejor experiencia. Para más información consulta nuestra";
+  //Panelde Cookies
+  cookieMessage="Este sitio web utiliza cookies para garantizar que obtengas la mejor experiencia. Para más información consulta nuestra";
   cookieDismiss="Acepto";
   cookieLinkText="Política de Cookies";
 

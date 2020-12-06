@@ -86,6 +86,10 @@
     color: #197AAA;
 }
 
+a:hover {
+    color: #197AAA;
+}
+
 
 /* Footer */
 
@@ -119,7 +123,7 @@
 }
 
 
-/* Cookies */
+/* Panel de Cookies */
 
 .cc-revoke,
 .cc-window {
@@ -144,6 +148,10 @@
     border-color: #F8DCE0 !important;
 }
 
+.cc-color-override--1986190269.cc-window {
+    color: #4F5960 !important;
+}
+
 
 /* Paginación*/
 
@@ -154,4 +162,37 @@
 .ngx-pagination .current {
     background: #F7AFBE !important;
     border-radius: 10%;
+}
+
+.espacio {
+    margin-top: -50px;
+}
+
+
+/* Perfil*/
+
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: #EFF7FA;
+}
+
+.azul {
+    color: #4C99C0;
+}
+
+
+/* Home - Menú de navegación*/
+
+@media (min-width: 64em) {
+    .rk-navigation {
+        padding-right: 130px;
+    }
+}
+
+.menor {
+    font-size: 12px;
+}
+
+.justify {
+    text-align: justify;
 }

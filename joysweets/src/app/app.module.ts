@@ -65,9 +65,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     FormsModule,
     AdminModule,
-    AppRoutingModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AppRoutingModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'es' }

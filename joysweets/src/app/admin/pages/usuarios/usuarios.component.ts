@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+//Modelos
 import { NuevoUsuario } from '../../models/NuevoUsuario';
 import { Usuario } from '../../models/usuarios.model';
 
@@ -36,7 +38,7 @@ export class UsuariosComponent implements OnInit {
   cargarUsuarios(){
     this.usuarioService.cargarUsuarios()
       .subscribe((resp:any)=>{
-        console.log(resp);
+        //console.log(resp);
         this.usuarios=resp;
       })
   }

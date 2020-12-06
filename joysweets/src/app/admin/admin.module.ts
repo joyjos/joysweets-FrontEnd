@@ -68,8 +68,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     HttpClientModule,
     CKEditorModule,
-    AdminRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AdminRoutingModule
   ],
   exports: [
     DashboardComponent,

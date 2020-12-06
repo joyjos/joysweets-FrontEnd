@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+//Servicios
 import { PostsService } from '../../services/posts.service';
 
 @Component({

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+
+//Modelos
 import { Usuario } from '../../models/usuarios.model';
 
 //Servicios
@@ -67,14 +69,6 @@ export class UsuarioComponent implements OnInit {
   //Método para actualizar un usuario
   //=======================================
   actualizarUsuario(){
-
-    //Creo el objeto de tipo Usuario
-    /* let nuevoUsuario2=new Usuario(
-      this.forma.value.nombre,
-      this.forma.value.username,
-      this.forma.value.idUsuario,
-      this.forma.value.rol
-    ); */
 
     let idRol: number;
 

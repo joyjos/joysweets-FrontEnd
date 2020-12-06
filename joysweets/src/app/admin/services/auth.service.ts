@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
+
+//Modelos
 import { NuevoUsuario } from '../models/NuevoUsuario';
 import { LoginUsuario } from '../models/LoginUsuario';
-
-import { Router } from '@angular/router';
 
 //Configuración
 import { URL_SERVICES } from '../../config/config';
 
 //Sweetalert2
 import Swal from 'sweetalert2';
-
-import { map } from 'rxjs/operators';
 
 //Servicios
 import { TokenService } from './token.service';

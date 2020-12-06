@@ -1,12 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+
+//Modelos
 import { Usuario } from 'src/app/admin/models/usuarios.model';
+
+//Interfaces
+import { Receta } from 'src/app/interfaces/receta.interface';
+import { Comentario } from 'src/app/interfaces/comentario.interface';
+
+//Servicios
 import { ComentarioService } from 'src/app/admin/services/comentario.service';
 import { UsuarioService } from 'src/app/admin/services/usuario.service';
-import { Comentario } from 'src/app/interfaces/comentario.interface';
-import { Receta } from 'src/app/interfaces/receta.interface';
 import { PostsService } from 'src/app/services/posts.service';
+
+//Sweetalert2
 import Swal from 'sweetalert2';
 
 @Component({

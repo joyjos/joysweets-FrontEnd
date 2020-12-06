@@ -29,9 +29,9 @@ const adminRoutes:Routes=[
             {path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dashboard'}},
                 
             //Mantenimientos
-            {path: 'usuarios', canActivate: [AdminGuard], component: UsuariosComponent, data: {titulo: 'Usuarios'}},
-            {path: 'posts', canActivate: [AdminGuard], component: PostsComponent, data: {titulo: 'Recetas'}},
-            {path: 'comentarios', canActivate: [AdminGuard], component: ComentariosComponent, data: {titulo: 'Comentarios'}},
+            {path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Usuarios'}},
+            {path: 'posts', component: PostsComponent, data: {titulo: 'Recetas'}},
+            {path: 'comentarios', component: ComentariosComponent, data: {titulo: 'Comentarios'}},
             {path: 'comentario/:id', component: ComentarioComponent, data: {titulo: 'Actualizar Comentario'}},
             {path: 'post/:id', component: PostComponent, data: {titulo: 'Actualizar Receta'}},
             {path: 'usuario/:id', component: UsuarioComponent, data: {titulo: 'Actualizar Usuario'}},

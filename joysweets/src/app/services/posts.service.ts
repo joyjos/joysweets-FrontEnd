@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Post } from '../interfaces/post.interface';
 import {map, filter} from 'rxjs/operators';
+
+//Interfaces
+import { Post } from '../interfaces/post.interface';
 import { Comentario } from '../interfaces/comentario.interface';
 import { Receta } from '../interfaces/receta.interface';
+
+//Configuración
+import { URL_SERVICES } from '../config/config';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +29,8 @@ export class PostsService {
   //===============================
   private cargarPosts(){
     return new Promise((resolve, reject)=>{
-      this.http.get('http://localhost:8081/posts/posts')
+      let url=URL_SERVICES + '/posts/posts';
+      this.http.get(url)
       .subscribe((resp:Post)=>{
 
         //Guardo en posts la respuesta
@@ -39,14 +45,16 @@ export class PostsService {
   //Método para cargar la receta
   //===============================
   public getReceta(id:number){
-    return this.http.get('http://localhost:8081/posts/post/'+ id);
+    let url=URL_SERVICES + '/posts/post/'+ id;
+    return this.http.get(url);
   }
 
   //=====================================
   //Método para cargar los comentarios
   //=====================================
   public getComentarios(){
-    return this.http.get('http://localhost:8081/comentarios/comentarios');
+    let url=URL_SERVICES + '/comentarios/comentarios';
+    return this.http.get(url);
   }
 
   //=====================================

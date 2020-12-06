@@ -4,30 +4,21 @@
             <div class="card-body">
                 <h4 class="card-title">Mi perfil de usuario</h4>
                 <h6 class="card-subtitle">Dulces Emociones</h6>
-                <form [formGroup]="forma" class="form p-t-20">
+                <form [formGroup]="form" class="form p-t-20">
                     <div class="form-group col-lg-6 col-md-6 col-sm-7">
                         <label for="exampleInputuname">Nombre</label>
                         <div class="input-group">
                             <div class="input-group-addon"><i class="ti-user"></i></div>
-                            <input formControlName="nombre" name="nombre" type="text" class="form-control joy">
+                            <input [readonly]="true" formControlName="nombre" name="nombre" type="text" class="form-control joy">
                         </div>
                     </div>
                     <div class=" form-group col-lg-6 col-md-6 col-sm-7 ">
                         <label for="exampleInputEmail1 ">Email</label>
                         <div class="input-group ">
                             <div class="input-group-addon"><i class="ti-email"></i></div>
-                            <input formControlName="username" name="username" type="email" class="form-control joy">
+                            <input [readonly]="true" formControlName="username" name="username" type="email" class="form-control joy">
                         </div>
                     </div>
-                    <div class=" form-group col-lg-6 col-md-6 col-sm-7 ">
-                        <label for="exampleInputEmail1 ">Contraseña</label>
-                        <div class="input-group ">
-                            <div class="input-group-addon"><i class="ti-lock"></i></div>
-                            <input formControlName="password" name="password" type="text" class="form-control joy">
-                        </div>
-                    </div>
-                    <button type="submit " class="btn btn-success waves-effect waves-light m-r-10 ">Submit</button>
-                    <button type="submit " class="btn btn-inverse waves-effect waves-light ">Cancel</button>
                 </form>
             </div>
         </div>

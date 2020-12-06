@@ -16,7 +16,7 @@ constructor(public authService:AuthService, public router:Router){}
       //console.log('Pasó el Guard');
       return true;
     }else{
-      console.log('Bloqueado por el Guard');
+      //console.log('Bloqueado por el Guard');
       this.router.navigate(['/login']);
       return false;
     }

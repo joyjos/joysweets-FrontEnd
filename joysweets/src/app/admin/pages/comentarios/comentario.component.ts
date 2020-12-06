@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 //Servicios
 import { ComentarioService } from '../../services/comentario.service';
+
+//Sweetalert2
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,7 +19,7 @@ export class ComentarioComponent implements OnInit {
   form:FormGroup;
 
   //Creo un comentario de tipo Comentario vacío
-  comentario:Comentario[]=[];
+  comentario:Comentario;
 
   constructor(public comentarioService:ComentarioService, public activatedRoute:ActivatedRoute, public router:Router) {
 
@@ -36,7 +38,6 @@ export class ComentarioComponent implements OnInit {
     //Validaciones
     this.form=new FormGroup({
       comentario:new FormControl(null, Validators.required),
-      fechaComentario:new FormControl(null, Validators.required),
       idComentario:new FormControl
     });
   }
@@ -52,7 +53,6 @@ export class ComentarioComponent implements OnInit {
 
         //Establezco los valores de los campos
         this.form.controls['comentario'].setValue(resp.comentario);
-        this.form.controls['fechaComentario'].setValue(resp.fechaComentario);
         this.form.controls['idComentario'].setValue(resp.idComentario);
       });
   }
@@ -63,11 +63,10 @@ export class ComentarioComponent implements OnInit {
   actualizarComentario(){
 
     //Creo el objeto de tipo Comentario
-    let nuevoComentario=new Comentario(
-      this.form.value.comentario,
-      this.form.value.fechaComentario,
-      this.form.value.idComentario
-    );
+    let nuevoComentario={
+      'comentario':this.form.value.comentario,
+      'idComentario':this.form.value.idComentario
+  }
 
     //console.log(nuevoComentario);
     

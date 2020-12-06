@@ -1,12 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PostsService } from '../../services/posts.service';
-import { Receta } from '../../interfaces/receta.interface';
-import { Comentario } from '../../interfaces/comentario.interface';
 import { map, filter } from 'rxjs/operators';
 import { pipe, Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+//Interfaces
+import { Receta } from '../../interfaces/receta.interface';
+import { Comentario } from '../../interfaces/comentario.interface';
+
+//Modelos
 import { Usuario } from '../../admin/models/usuarios.model';
+
+//Servicios
+import { PostsService } from '../../services/posts.service';
 
 @Component({
   selector: 'app-receta',
@@ -33,10 +39,7 @@ export class RecetaComponent implements OnInit {
 
   id:number;
 
-  constructor(private activatedRoute:ActivatedRoute, public postsService:PostsService) {
-
-    
-   }
+  constructor(private activatedRoute:ActivatedRoute, public postsService:PostsService) {}
 
   ngOnInit(): void {
     this.activatedRoute.params

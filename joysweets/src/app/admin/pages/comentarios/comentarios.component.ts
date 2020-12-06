@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Comentario } from '../../models/comentarios.model';
 
-
 //Servicios
 import { ComentarioService } from '../../services/comentario.service';
 

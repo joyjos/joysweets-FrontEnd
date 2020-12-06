@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Comentario } from '../models/comentarios.model';
-
 import { map } from 'rxjs/operators';
+
+//Modelos
+import { Comentario } from '../models/comentarios.model';
 
 //Configuración
 import { URL_SERVICES } from '../../config/config';

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+//Modelos
+import { NuevoUsuario } from '../models/NuevoUsuario';
+
 //Sweetalert2
 import Swal from 'sweetalert2';
 
 //Servicios
-import { NuevoUsuario } from '../models/NuevoUsuario';
 import { AuthService } from '../services/auth.service';
 
 //Navegación
@@ -79,12 +81,22 @@ export class RegisterComponent implements OnInit {
       this.form.value.password
     );
 
+    //Cargo el urlComentario del Local Storage
+    let idPost=parseInt(localStorage.getItem('urlComentario'));
+    console.log(idPost);
+
     //Llamo al servicio
     this.authService.nuevo(nuevoUsuario)
       .subscribe(resp=>{
         //console.log(resp);
-        //Creado el usuario lo mando al login para que pueda loguearse
-        this.router.navigate(['/login']);
+        
+        //Si llego a register por un comentario
+        if(idPost){
+          this.router.navigate(['/loginUrl/'+ idPost]);
+        }else{
+          //Creado el usuario lo mando al login para que pueda loguearse
+          this.router.navigate(['/login']);
+        }
       },
       error=>{
         console.log(error.status);

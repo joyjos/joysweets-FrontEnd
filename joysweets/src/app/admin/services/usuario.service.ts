@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Usuario } from '../models/usuarios.model';
 import { HttpClient } from '@angular/common/http';
-
 import { map } from 'rxjs/operators';
+
+//Modelos
+import { Usuario } from '../models/usuarios.model';
 
 //Configuración
 import { URL_SERVICES } from '../../config/config';

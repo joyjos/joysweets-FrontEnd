@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
+//Modelos
 import { Post } from '../models/posts.model';
 
 //Configuración
@@ -7,8 +10,6 @@ import { URL_SERVICES } from '../../config/config';
 
 //Sweetalert2
 import Swal from 'sweetalert2';
-
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
